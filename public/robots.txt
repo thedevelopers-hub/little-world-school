@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Allow: /en
+Allow: /mr
+Allow: /hi
+
+Sitemap: https://littleworldschool.edu.in/sitemap.xml

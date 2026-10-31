@@ -1,0 +1,89 @@
+@import "tailwindcss";
+
+@layer base {
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    font-family: 'Plus Jakarta Sans', 'Noto Sans Devanagari', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    scroll-behavior: smooth;
+    max-width: 100%;
+    overflow-x: clip;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+
+  body {
+    max-width: 100%;
+    overflow-x: clip;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  /* Prevent mobile Safari input auto-zoom by keeping font-size >= 16px on mobile inputs */
+  input[type="text"],
+  input[type="tel"],
+  input[type="email"],
+  input[type="date"],
+  select,
+  textarea {
+    font-size: 16px;
+  }
+  @media (min-width: 640px) {
+    input[type="text"],
+    input[type="tel"],
+    input[type="email"],
+    input[type="date"],
+    select,
+    textarea {
+      font-size: 0.875rem; /* 14px */
+    }
+  }
+}
+
+/* Ensure Devanagari characters are not clipped with adequate line height & padding */
+[lang="mr"], [lang="hi"] {
+  font-family: 'Noto Sans Devanagari', 'Plus Jakarta Sans', system-ui, sans-serif;
+  line-height: 1.7;
+}
+
+/* Fluid typography utilities */
+.fluid-hero-title {
+  font-size: clamp(1.75rem, 1.15rem + 2.8vw, 3rem);
+  line-height: 1.2;
+}
+
+.fluid-section-title {
+  font-size: clamp(1.4rem, 1.05rem + 1.6vw, 2.35rem);
+  line-height: 1.25;
+}
+
+.fluid-body {
+  font-size: clamp(0.875rem, 0.82rem + 0.3vw, 1.05rem);
+  line-height: 1.65;
+}
+
+/* Custom subtle scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #fdf8f0;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Utility to hide scrollbars on swipeable tab rows */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

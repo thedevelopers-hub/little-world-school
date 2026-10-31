@@ -1,0 +1,6 @@
+{
+  "name": "Little World School - Ambivli",
+  "description": "Official trilingual website for Little World School in Ambivli, Thane, supporting English, Marathi (मराठी), and Hindi (हिन्दी) with admissions, programs, and contact info.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

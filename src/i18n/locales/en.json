@@ -1,0 +1,364 @@
+{
+  "meta": {
+    "title": "Little World School – Ambivli | Big Dreams Begin Here",
+    "description": "Little World School at Neptune Swarajya, Ambivli (West), Thane. Playgroup, Nursery, Jr & Sr KG, Classes 1–12. Holistic early childhood and school education.",
+    "ogTitle": "Little World School – Ambivli, Thane | Big Dreams Begin Here",
+    "ogDescription": "Nurturing young minds in Ambivli, Thane with joyful learning, foundational values, and holistic development from Playgroup to Grade 12.",
+    "keywords": "Little World School, school in Ambivli, Neptune Swarajya school, Kalyan Thane schools, nursery admission Ambivli, playgroup Ambivli"
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About Us",
+    "classes": "Classes & Programs",
+    "facilities": "Facilities",
+    "admissions": "Admissions",
+    "gallery": "Gallery",
+    "faq": "FAQ",
+    "contact": "Contact Us",
+    "enquireNow": "WhatsApp Enquiry"
+  },
+  "languageSwitcher": {
+    "label": "Language",
+    "currentLanguageAnnouncement": "Current language is English",
+    "ariaLabel": "Select website language"
+  },
+  "hero": {
+    "badge": "",
+    "title": "Where Joyful Childhood Meets Inspiring Education",
+    "subtitle": "Nurturing curiosity, confidence, and compassion in Ambivli, Thane with play-based early learning and strong scholastic foundations from Playgroup to Grade 12.",
+    "ctaAdmissions": "WhatsApp Admission Enquiry",
+    "ctaExplore": "Explore Programs",
+    "ctaWhatsapp": "Chat on WhatsApp",
+    "stat1Value": "PG to 12",
+    "stat1Label": "Comprehensive Education",
+    "stat2Value": "15:1",
+    "stat2Label": "Nurturing Student-Teacher Ratio",
+    "stat3Value": "100%",
+    "stat3Label": "Activity-Based Foundational Pedagogy",
+    "stat4Value": "5 Min",
+    "stat4Label": "From Ambivli Railway Station",
+    "highlightAmbivli": "Located at Neptune Swarajya, Ambivli (West), Kalyan"
+  },
+  "about": {
+    "badge": "Our Heritage & Philosophy",
+    "title": "A Safe, Inspiring Second Home for Your Child",
+    "subtitle": "Empowering young learners in Ambivli and Kalyan with curiosity, empathy, and academic excellence.",
+    "storyTitle": "Cultivating Joyful Minds in Ambivli",
+    "storyP1": "Founded with the conviction that every child deserves a gentle, stimulating, and value-rich beginning, Little World School has grown into one of the most trusted educational environments in Ambivli (West). Nestled inside the peaceful Neptune Swarajya community, our campus provides clean air, green spaces, and a secure setting away from main road traffic.",
+    "storyP2": "We blend modern foundational learning practices with strong Indian cultural roots. Our compassionate educators focus on building confidence, communication skills, and critical thinking rather than rote memorization.",
+    "visionTitle": "Our Vision",
+    "visionText": "To nurture self-assured, compassionate, and lifelong learners who embrace challenges with enthusiasm, moral integrity, and social responsibility.",
+    "missionTitle": "Our Mission",
+    "missionText": "To deliver child-centric, accessible, and high-quality education through interactive classrooms, experiential discovery, and close collaboration with parents.",
+    "principalQuote": "\"Education is not just about books; it is the art of lighting a child's inner spark of curiosity, kindness, and courage.\"",
+    "principalRole": "Leadership Team, Little World School",
+    "pillarsTitle": "Our Four Pillars of Growth",
+    "pillar1Title": "Foundational Literacy & Phonics",
+    "pillar1Desc": "Strong phonetic awareness, joyful storytelling, and bilingual language comfort from the earliest years.",
+    "pillar2Title": "Creative & Experiential Arts",
+    "pillar2Desc": "Music, dance, sensory craft, and dramatic play designed to enhance motor skills and imagination.",
+    "pillar3Title": "STEM & Discovery Hub",
+    "pillar3Desc": "Hands-on math manipulatives, early science explorations, and environmental appreciation.",
+    "pillar4Title": "Safety, Care & Values",
+    "pillar4Desc": "Monitored campus, clean sanitation, compassionate teachers, and character-building daily routines."
+  },
+  "classes": {
+    "badge": "Academic Programs",
+    "title": "Programs Tailored for Every Developmental Stage",
+    "subtitle": "From toddler sensory play to senior secondary scholastic readiness, discover our structured programs.",
+    "ageGroup": "Age Group",
+    "curriculum": "Curriculum Focus",
+    "keyActivities": "Key Highlights",
+    "enquireClass": "Enquire on WhatsApp",
+    "admissionOpen": "",
+    "pg": {
+      "name": "Playgroup (PG)",
+      "age": "1.8 – 2.5 Years",
+      "desc": "A gentle first step away from home focusing on sensory play, warm social bonding, and speech immersion.",
+      "points": [
+        "Sensory motor exploration and soft play zones",
+        "Rhymes, music, and interactive movement",
+        "Fine motor skill development through colorful toys",
+        "Gentle toilet training and caring routine support"
+      ]
+    },
+    "nursery": {
+      "name": "Nursery",
+      "age": "2.5 – 3.5 Years",
+      "desc": "Building foundational speech, emotional confidence, and curiosity through guided group games and storytelling.",
+      "points": [
+        "Phonics fundamentals and vocabulary immersion",
+        "Number readiness and tactile pattern recognition",
+        "Freehand drawing, painting, and tactile play",
+        "Social sharing, emotional empathy, and manners"
+      ]
+    },
+    "jkg": {
+      "name": "Junior KG",
+      "age": "3.5 – 4.5 Years",
+      "desc": "Structured pre-reading, letter tracing, counting, and early environmental awareness in a joyful setting.",
+      "points": [
+        "Letter sound recognition and two-letter blending",
+        "Number counting (1 to 50) and spatial reasoning",
+        "Theme-based science and nature discovery walks",
+        "Interactive circle time discussions in English"
+      ]
+    },
+    "skg": {
+      "name": "Senior KG",
+      "age": "4.5 – 5.5 Years",
+      "desc": "Independent reading, sentence formation, mental math, and full readiness for formal primary school.",
+      "points": [
+        "CVC word formation, sight words, and reading fluency",
+        "Addition, subtraction concepts, and clock awareness",
+        "Expressive storytelling and public speaking activities",
+        "Cognitive readiness for CBSE/State primary curriculum"
+      ]
+    },
+    "grade1_12": {
+      "name": "Classes 1 to 12",
+      "age": "6 – 18 Years",
+      "desc": "A continuous learning ladder fostering scholastic excellence, analytical thinking, sports, and holistic character.",
+      "points": [
+        "Holistic curriculum aligned with modern learning standards",
+        "Computer science, coding literacy, and modern labs",
+        "Dedicated sports coaching, yoga, and athletic training",
+        "Individual academic mentoring and board exam preparation"
+      ]
+    }
+  },
+  "facilities": {
+    "badge": "Campus Amenities",
+    "title": "Designed for Safe, Stimulating Child Development",
+    "subtitle": "Every corner of our Neptune Swarajya campus is purposefully crafted for child safety, hygiene, and creative exploration.",
+    "items": [
+      {
+        "title": "Smart Digital Classrooms",
+        "desc": "Interactive audio-visual panels with child-safe educational software, bringing concepts alive through storytelling and animations.",
+        "tag": "Learning"
+      },
+      {
+        "title": "Safe Soft-Play & Toy Arena",
+        "desc": "Non-toxic EVA foam-padded indoor play areas with age-graded balance beams, tunnels, and Montessori activity cubes.",
+        "tag": "Play"
+      },
+      {
+        "title": "Storybook & Phonics Library",
+        "desc": "Vibrant reading corner stocked with illustrated picture books, bilingual folk tales, and phonics readers.",
+        "tag": "Literacy"
+      },
+      {
+        "title": "Creative Art & Activity Studio",
+        "desc": "Dedicated space for pottery, painting, craft, yoga, dance, and cultural celebrations.",
+        "tag": "Creativity"
+      },
+      {
+        "title": "24/7 CCTV & Campus Security",
+        "desc": "Comprehensive CCTV surveillance across all common corridors and gates with strict visitor logging.",
+        "tag": "Safety"
+      },
+      {
+        "title": "RO Pure Drinking Water & Clean Sanitation",
+        "desc": "Multi-stage purified drinking water and sanitized, child-height washroom facilities maintained round the clock.",
+        "tag": "Hygiene"
+      },
+      {
+        "title": "Transport & Van Assistance",
+        "desc": "Safe transport connectivity across Ambivli, Shahad, Titwala, and Kalyan with dedicated female attendants.",
+        "tag": "Commute"
+      },
+      {
+        "title": "First Aid & Medical Station",
+        "desc": "Equipped first-aid clinic with trained staff on standby for prompt health and wellness care.",
+        "tag": "Health"
+      }
+    ]
+  },
+  "admissions": {
+    "badge": "",
+    "title": "Simple 4-Step Admission Journey",
+    "subtitle": "Direct WhatsApp connect with zero paperwork hassle. Get immediate counseling, fee structure, and book your campus walkthrough.",
+    "step1Title": "Step 1: Connect on WhatsApp",
+    "step1Desc": "Send a WhatsApp message with your child's age or class preference for immediate prospectus & fee details.",
+    "step2Title": "Step 2: Campus Walkthrough",
+    "step2Desc": "Visit Neptune Swarajya in Ambivli to experience our classrooms, meet teachers, and tour facilities.",
+    "step3Title": "Step 3: Document Verification",
+    "step3Desc": "A warm, stress-free interaction with the child and simple document verification.",
+    "step4Title": "Step 4: Welcome to School",
+    "step4Desc": "Receive your child's welcome kit, uniform, books, and start a joyful educational journey.",
+    "startWhatsappAdmission": "Start Admission on WhatsApp",
+    "docReqTitle": "Documents Required for Admission",
+    "docReqSubtitle": "Keep soft copies or photocopies ready for verification during your campus visit.",
+    "docs": [
+      "Original Birth Certificate of the child (with photocopy)",
+      "3 Recent Passport-size photographs of the student",
+      "1 Passport photograph of each parent / legal guardian",
+      "Copy of child's Aadhar Card (if issued)",
+      "Parent's Address Proof (Electricity bill, Ration card, or Rental agreement in Ambivli/Kalyan)",
+      "Transfer Certificate / Leaving Certificate from previous school (for Class 1 and above)"
+    ],
+    "criteriaTitle": "Age Eligibility Guidelines (as of June 30)",
+    "criteriaSubtitle": "Compliant with Maharashtra state early education norms.",
+    "fastResponseBadge": "Fast WhatsApp Response (< 15 mins during school hours)",
+    "chooseClassTitle": "Choose a Class to Enquire on WhatsApp",
+    "chooseClassSubtitle": "Select your child's class below to send a customized, pre-filled WhatsApp inquiry instantly:"
+  },
+  "whatsapp": {
+    "title": "Direct Admissions Helpline on WhatsApp",
+    "subtitle": "Get instant answers regarding admission seats, school fees, transport routes, and book a campus tour directly with our counselors.",
+    "generalTemplate": "Hello Little World School, I would like to enquire about admission and programs at your Ambivli campus. Please share details.",
+    "classTemplate": "Hello Little World School, I would like to enquire about admission for {class}. Please share the admission process and details.",
+    "locationTemplate": "Hello Little World School, I would like directions and campus visiting hours for Neptune Swarajya, Ambivli (West). Please guide me.",
+    "feesTemplate": "Hello Little World School, could you please share the fee structure and payment schedule for {class}?",
+    "transportTemplate": "Hello Little World School, do you provide school bus / van transport in our area? Please share the transport routes.",
+    "previewLabel": "Message Preview (Sent via your WhatsApp):",
+    "sendButton": "Chat on WhatsApp Now",
+    "chatHelp": "Clicking will open official WhatsApp Web or App with pre-filled message.",
+    "customInquiryNotice": "Official Little World School WhatsApp Hotline: +91 8652681370",
+    "selectTopicLabel": "Select Inquiry Topic:",
+    "topicGeneral": "General Admission Inquiry",
+    "topicClass": "Class-Specific Inquiry",
+    "topicLocation": "Location & Campus Visit",
+    "topicFees": "Fees & Admission Schedule",
+    "topicTransport": "School Bus & Transport",
+    "directDeskBadge": "Dedicated Parent Admissions Desk"
+  },
+  "gallery": {
+    "badge": "Life at Little World",
+    "title": "Joyful Moments, Lifelong Memories",
+    "subtitle": "Glimpses of daily classroom discoveries, celebrations, creativity, and playground fun at Ambivli.",
+    "filterAll": "All Photos",
+    "filterCampus": "Campus & Classrooms",
+    "filterActivities": "Learning & Activities",
+    "filterCelebrations": "Events & Festivals",
+    "filterSports": "Play & Sports",
+    "items": [
+      {
+        "id": "1",
+        "category": "activities",
+        "title": "Phonics & Sensory Exploration",
+        "desc": "Hands-on play with tactile alphabets and educational toys in our cheerful classroom."
+      },
+      {
+        "id": "2",
+        "category": "campus",
+        "title": "Modern Interactive Classrooms",
+        "desc": "Bright, ventilated, and child-safe learning spaces designed for joyful engagement."
+      },
+      {
+        "id": "3",
+        "category": "celebrations",
+        "title": "Annual Gathering & Cultural Day",
+        "desc": "Celebrating Indian festivals, traditional dances, and stage confidence among young learners."
+      },
+      {
+        "id": "4",
+        "category": "sports",
+        "title": "Physical Fitness & Outdoor Play",
+        "desc": "Promoting balance, team spirit, and coordination in our green outdoor activity zones."
+      },
+      {
+        "id": "5",
+        "category": "activities",
+        "title": "Creative Painting & Crafts",
+        "desc": "Expressive art sessions fostering imagination, color sense, and fine motor skills."
+      },
+      {
+        "id": "6",
+        "category": "campus",
+        "title": "Dedicated Soft Play & Toy Area",
+        "desc": "A secure, padded zone for toddlers to crawl, climb, and develop balance safely."
+      }
+    ]
+  },
+  "contact": {
+    "badge": "Campus Location & Reach",
+    "title": "Visit Us or Connect on WhatsApp",
+    "subtitle": "Conveniently located near Ambivli Railway Station inside Neptune Swarajya.",
+    "addressLabel": "School Campus Address",
+    "landmarkLabel": "Landmark",
+    "getDirections": "Get Google Maps Directions",
+    "phoneLabel": "Helpline & Office",
+    "emailLabel": "Email Address",
+    "officeHoursLabel": "Admissions Office Hours",
+    "timingsLabel": "School Timings",
+    "copyAddress": "Copy Address",
+    "addressCopied": "Address Copied!",
+    "whatsappVisit": "Book Campus Visit on WhatsApp",
+    "quickHelp": "Visiting Little World School",
+    "quickHelpDesc": "Parents are welcome to walk in between 8:30 AM and 4:30 PM, Monday through Saturday. For personalized tours, message us on WhatsApp.",
+    "visitNotice": "Campus visits are warmly welcomed during school hours. Prior appointment on WhatsApp is recommended for personalized guided tours."
+  },
+  "faq": {
+    "badge": "Parent Questions",
+    "title": "Frequently Asked Questions",
+    "subtitle": "Clear answers to common questions about admissions, school culture, and facilities.",
+    "items": [
+      {
+        "q": "What is the minimum age requirement for Nursery and Playgroup?",
+        "a": "For Playgroup (PG), the child should be 1.8 to 2.5 years old by June 30 of the academic year. For Nursery, the child should be 2.5 to 3.5 years old. Our admissions counselor will guide you based on your child's birth date."
+      },
+      {
+        "q": "Where is Little World School located and is it accessible from Ambivli Station?",
+        "a": "The school is located at Neptune Swarajya, Swarajya Road, Village Ambivli (West), Kalyan. It is just 5 minutes (approx. 1 km) from Ambivli Railway Station, making it very convenient for residents of Ambivli, Shahad, and Titwala."
+      },
+      {
+        "q": "What is the medium of instruction at Little World School?",
+        "a": "The primary medium of instruction is English. However, to ensure every child feels comfortable and emotionally secure, our teachers are fluent in Marathi and Hindi, providing gentle multilingual pastoral guidance."
+      },
+      {
+        "q": "Does the school provide transport or van facilities?",
+        "a": "Yes, verified school van and transport assistance is available covering key residential clusters in Ambivli (West & East), Neptune Swarajya, Shahad, and surrounding Kalyan areas, accompanied by caring attendants."
+      },
+      {
+        "q": "What security and health safety measures are in place?",
+        "a": "We maintain 24/7 CCTV surveillance across all gates and corridors, strict visitor security logs, child-safe infrastructure, regular sanitization, pure RO drinking water, and on-call first aid support."
+      },
+      {
+        "q": "How can I inquire and apply for admission?",
+        "a": "WhatsApp is our direct, fastest inquiry channel! Simply click any WhatsApp button on this website or message +91 8652681370. You can also visit the school office at Neptune Swarajya directly."
+      },
+      {
+        "q": "Are extracurricular activities included in the school schedule?",
+        "a": "Yes, arts, craft, music, yoga, speech and drama, dance, and outdoor sports are woven into the weekly curriculum at no separate coaching cost for pre-primary and primary learners."
+      },
+      {
+        "q": "How do parents stay updated about their child's daily progress?",
+        "a": "We conduct regular Parent-Teacher Meetings (PTMs), share weekly developmental milestones, and provide direct parent communication channels via dedicated school notices and WhatsApp updates."
+      }
+    ]
+  },
+  "footer": {
+    "tagline": "Big Dreams Begin Here. Empowering the future generation with joyful learning, high morals, and inclusive care in Ambivli, Thane.",
+    "quickLinks": "Quick Links",
+    "programs": "Programs Offered",
+    "contactInfo": "School Campus",
+    "copyright": "© 2025 Little World School. All rights reserved.",
+    "privacyPolicy": "Privacy Policy",
+    "sitemapLabel": "Multilingual Sitemap",
+    "rightsReserved": "Official Website of Little World School, Ambivli.",
+    "madeWithCare": "Dedicated to excellence in child education.",
+    "schoolTimingsSummary": "Mon - Sat: 8:30 AM to 4:30 PM",
+    "devCredit": "Website Designed & Developed By:",
+    "devCreditSub": "(Web Design & Development Enquiries)"
+  },
+  "privacyModal": {
+    "title": "Privacy Policy & Parent Data Protection",
+    "p1": "Little World School values your privacy. Any information submitted through our WhatsApp messages (including child's name, parent contact numbers, and address) is used exclusively for admission communication and academic enrollment.",
+    "p2": "We do not sell, rent, or share personal contact information with third-party marketing agencies. All student and parent records are held strictly confidential in accordance with Indian educational safety guidelines.",
+    "p3": "Parent data is stored securely. If you wish to update or remove your inquiry records, you may contact our admissions desk at admissions@littleworldschool.edu.in.",
+    "p4": "Campus CCTV cameras are strictly operational for child safety, campus security, and emergency prevention. Footage is private and never published publicly.",
+    "close": "Close Policy"
+  },
+  "sitemapModal": {
+    "title": "Multilingual Crawlable Sitemap",
+    "desc": "Little World School provides crawlable, localized paths and alternate hreflang tags for all three supported languages.",
+    "languagesTitle": "Supported Language Routes",
+    "routesTitle": "Major Section Anchors",
+    "close": "Close Sitemap"
+  },
+  "system": {
+    "pageNotFound": "Page Not Found",
+    "backToHome": "Return to Homepage"
+  }
+}
