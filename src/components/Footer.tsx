@@ -212,27 +212,38 @@ export const Footer: React.FC<FooterProps> = ({
         </div>
 
         {/* Website Designed & Developed By Footer Credit */}
-        <div className="mt-6 pt-5 border-t border-slate-800/80 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-400">
-          <div className="flex flex-wrap items-center justify-center sm:justify-start gap-2 text-center sm:text-left">
+        <div className="mt-8 pt-6 border-t border-slate-800/80 flex flex-col md:flex-row items-center justify-between gap-4 text-xs">
+          {/* Developer Branding */}
+          <div className="flex flex-col sm:flex-row items-center text-center sm:text-left gap-1.5 sm:gap-2.5">
             <span className="text-slate-400 font-medium">
-              {t.footer.devCredit || 'Website Designed & Developed By:'}
+              Website Designed &amp; Developed By
             </span>
-            <a
-              href={DEVELOPER_CONFIG.whatsappUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 font-bold text-emerald-400 hover:text-emerald-300 bg-emerald-950/60 hover:bg-emerald-900/60 border border-emerald-700/50 hover:border-emerald-500/70 px-3 py-1.5 rounded-full transition-all shadow-sm hover:shadow-emerald-900/30 group cursor-pointer"
-              title="Chat with developer on WhatsApp for website development services"
-              aria-label="Contact Developer on WhatsApp (+91 6387661594) for Website Development Services"
-            >
-              <MessageSquare className="w-3.5 h-3.5 text-emerald-400 group-hover:scale-110 transition-transform shrink-0" />
-              <span>{DEVELOPER_CONFIG.phoneDisplay}</span>
-            </a>
+            <span className="text-purple-400/40 hidden sm:inline">•</span>
+            <div className="flex flex-wrap items-center justify-center gap-2">
+              <span className="text-white font-bold tracking-wider">
+                VICKY
+              </span>
+              <span className="px-2 py-0.5 rounded-md bg-purple-950/80 border border-purple-500/30 text-purple-200 font-black tracking-widest text-[11px] uppercase">
+                VICTORIX
+              </span>
+              <span className="text-purple-400/40 hidden sm:inline">•</span>
+              <span className="text-slate-400 text-[11px] font-medium">
+                Website Designer &amp; Developer
+              </span>
+            </div>
           </div>
 
-          <div className="flex items-center gap-2 text-[11px] text-slate-500">
-            <span>{t.footer.devCreditSub || '(Web Design & Development Enquiries)'}</span>
-          </div>
+          {/* Premium Black, White & Purple WhatsApp Contact Button */}
+          <a
+            href={DEVELOPER_CONFIG.whatsappUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Contact Developer on WhatsApp"
+            className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl font-bold text-xs text-white bg-slate-900 hover:bg-purple-950 border border-purple-500/40 hover:border-purple-400 shadow-sm shadow-purple-950/50 hover:shadow-md hover:shadow-purple-900/40 transition-all duration-200 group active:scale-95 shrink-0"
+          >
+            <MessageSquare className="w-4 h-4 text-purple-400 group-hover:scale-110 group-hover:text-purple-300 transition-all shrink-0" />
+            <span className="tracking-wide">Contact Developer on WhatsApp</span>
+          </a>
         </div>
       </div>
     </footer>

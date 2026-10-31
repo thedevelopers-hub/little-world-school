@@ -192,17 +192,12 @@ export const SCHOOL_CONFIG = {
 /**
  * Developer Contact Configuration
  * Strictly separated from the school's official admissions enquiry number.
- * Exclusively for website development inquiries.
+ * Exclusively for developer credit in footer. Phone number is not visibly displayed.
  */
 export const DEVELOPER_CONFIG = {
-  phoneDisplay: '+91 8652681370',
-  whatsappNumber: '918652681370',
-  baseUrl: 'https://wa.me/918652681370',
-  prefilledMessage:
-    'Hello, I visited your Little World School website and would like to discuss website development services.',
-  get whatsappUrl(): string {
-    return `https://wa.me/918652681370?text=${encodeURIComponent(
-      'Hello, I visited your Little World School website and would like to discuss website development services.'
-    )}`;
-  },
+  name: 'VICKY',
+  brand: 'VICTORIX',
+  role: 'Website Designer & Developer',
+  whatsappUrl:
+    'https://wa.me/916387661594?text=Hello%20Vicky%2C%20I%20am%20interested%20in%20getting%20a%20professional%20website%20developed.',
 };
