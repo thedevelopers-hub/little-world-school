@@ -92,7 +92,11 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenInquiry }) => {
               aria-label="Admissions WhatsApp Helpline"
             >
               <MessageSquare className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
-              <span className="whitespace-nowrap">Admissions WhatsApp: {SCHOOL_CONFIG.phoneDisplay}</span>
+              <span className="whitespace-nowrap">
+                <span className="hidden md:inline">Admissions WhatsApp: </span>
+                <span className="md:hidden">Admissions: </span>
+                {SCHOOL_CONFIG.phoneDisplay}
+              </span>
             </a>
           </div>
         </div>

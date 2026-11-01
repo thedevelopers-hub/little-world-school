@@ -8,7 +8,7 @@ import {
   isValidLanguage,
   STORAGE_KEY,
 } from './index';
-import { SCHOOL_CONFIG, SCHOOL_CLASSES } from '../config/schoolConfig';
+import { SCHOOL_CONFIG, SCHOOL_CLASSES, SCHOOL_IMAGES } from '../config/schoolConfig';
 
 interface I18nContextType {
   language: SupportedLanguage;
@@ -29,8 +29,10 @@ export const I18nProvider: React.FC<{ children: React.ReactNode }> = ({ children
   const updateDocumentMetadata = useCallback((lang: SupportedLanguage, bundle: TranslationSchema) => {
     if (typeof document === 'undefined') return;
 
+    const langCode = lang === 'mr' ? 'mr-IN' : lang === 'hi' ? 'hi-IN' : 'en-IN';
+
     // 1. Update HTML lang attribute
-    document.documentElement.lang = lang;
+    document.documentElement.lang = langCode;
 
     // 2. Update page title
     document.title = bundle.meta.title;
@@ -48,8 +50,14 @@ export const I18nProvider: React.FC<{ children: React.ReactNode }> = ({ children
     const ogDesc = document.querySelector('meta[property="og:description"]');
     if (ogDesc) ogDesc.setAttribute('content', bundle.meta.ogDescription);
 
-    // 5. Update or inject Canonical & Alternate hreflangs
-    const origin = typeof window !== 'undefined' ? window.location.origin : '';
+    const twitterTitle = document.querySelector('meta[name="twitter:title"]');
+    if (twitterTitle) twitterTitle.setAttribute('content', bundle.meta.ogTitle);
+
+    const twitterDesc = document.querySelector('meta[name="twitter:description"]');
+    if (twitterDesc) twitterDesc.setAttribute('content', bundle.meta.ogDescription);
+
+    // 5. Update or inject Canonical
+    const origin = typeof window !== 'undefined' ? window.location.origin : 'https://little-world-school.vercel.app';
     let canonicalTag = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
     if (!canonicalTag) {
       canonicalTag = document.createElement('link');
@@ -58,52 +66,85 @@ export const I18nProvider: React.FC<{ children: React.ReactNode }> = ({ children
     }
     canonicalTag.href = `${origin}/${lang}`;
 
-    // 6. Update Schema.org JSON-LD
-    let scriptTag = document.getElementById('school-structured-data') as HTMLScriptElement | null;
+    // 6. Update dynamic Schema.org JSON-LD graph
+    let scriptTag = document.getElementById('school-dynamic-structured-data') as HTMLScriptElement | null;
     if (!scriptTag) {
       scriptTag = document.createElement('script');
-      scriptTag.id = 'school-structured-data';
+      scriptTag.id = 'school-dynamic-structured-data';
       scriptTag.type = 'application/ld+json';
       document.head.appendChild(scriptTag);
     }
 
-    const schoolSchema = {
+    const faqEntities = (bundle.faq?.items || []).map((item) => ({
+      '@type': 'Question',
+      name: item.q,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: item.a,
+      },
+    }));
+
+    const localizedSchemaGraph = {
       '@context': 'https://schema.org',
-      '@type': 'School',
-      name: SCHOOL_CONFIG.officialName,
-      alternateName:
-        lang === 'mr' ? 'लिटल वर्ल्ड स्कूल' : lang === 'hi' ? 'लिटिल वर्ल्ड स्कूल' : 'Little World School',
-      url: `${origin}/${lang}`,
-      logo: `${origin}/favicon.ico`,
-      description: bundle.meta.description,
-      address: {
-        '@type': 'PostalAddress',
-        streetAddress: 'Neptune Swarajya, Swarajya Road, Village Ambivli (West), Taluka Kalyan',
-        addressLocality: 'Ambivli',
-        addressRegion: 'Maharashtra',
-        postalCode: '421102',
-        addressCountry: 'IN',
-      },
-      geo: {
-        '@type': 'GeoCoordinates',
-        latitude: SCHOOL_CONFIG.geo.latitude,
-        longitude: SCHOOL_CONFIG.geo.longitude,
-      },
-      hasMap: SCHOOL_CONFIG.googleMapsUrl,
-      telephone: SCHOOL_CONFIG.phoneCall,
-      email: SCHOOL_CONFIG.email,
-      inLanguage: [lang, 'en', 'mr', 'hi'],
-      openingHoursSpecification: [
+      '@graph': [
         {
-          '@type': 'OpeningHoursSpecification',
-          dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
-          opens: '08:30',
-          closes: '16:30',
+          '@type': 'School',
+          '@id': `${origin}/#school`,
+          name: SCHOOL_CONFIG.officialName,
+          alternateName:
+            lang === 'mr'
+              ? ['लिटल वर्ल्ड स्कूल', 'लिटल वर्ल्ड स्कूल अंबिवली']
+              : lang === 'hi'
+              ? ['लिटिल वर्ल्ड स्कूल', 'लिटिल वर्ल्ड स्कूल अंबिवली']
+              : ['Little World School', 'Little World School Ambivli'],
+          url: `${origin}/${lang}`,
+          logo: `${origin}/favicon.svg`,
+          image: SCHOOL_IMAGES.heroMain,
+          description: bundle.meta.description,
+          telephone: SCHOOL_CONFIG.phoneCall,
+          email: SCHOOL_CONFIG.email,
+          address: {
+            '@type': 'PostalAddress',
+            streetAddress: 'Neptune Swarajya, Swarajya Road, Village Ambivli (West), Taluka Kalyan',
+            addressLocality: 'Ambivli',
+            addressRegion: 'Maharashtra',
+            postalCode: '421102',
+            addressCountry: 'IN',
+          },
+          geo: {
+            '@type': 'GeoCoordinates',
+            latitude: SCHOOL_CONFIG.geo.latitude,
+            longitude: SCHOOL_CONFIG.geo.longitude,
+          },
+          hasMap: SCHOOL_CONFIG.googleMapsUrl,
+          priceRange: '₹₹',
+          inLanguage: [langCode, 'en-IN', 'mr-IN', 'hi-IN'],
+          sameAs: [`https://wa.me/${SCHOOL_CONFIG.whatsappNumber}`],
+          openingHoursSpecification: [
+            {
+              '@type': 'OpeningHoursSpecification',
+              dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+              opens: '08:30',
+              closes: '16:30',
+            },
+          ],
+        },
+        {
+          '@type': 'WebSite',
+          '@id': `${origin}/#website`,
+          name: SCHOOL_CONFIG.officialName,
+          url: origin,
+          inLanguage: ['en-IN', 'mr-IN', 'hi-IN'],
+        },
+        {
+          '@type': 'FAQPage',
+          '@id': `${origin}/#faq`,
+          mainEntity: faqEntities,
         },
       ],
     };
 
-    scriptTag.textContent = JSON.stringify(schoolSchema, null, 2);
+    scriptTag.textContent = JSON.stringify(localizedSchemaGraph, null, 2);
   }, []);
 
   // Language setter with persistence and smooth URL sync

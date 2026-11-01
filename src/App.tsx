@@ -113,21 +113,27 @@ const MainApp: React.FC = () => {
         onOpenInquiry={openInquiry}
       />
 
-      {/* Floating Action Elements */}
-      <div className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-40 flex flex-col items-end gap-3 pointer-events-none">
-        {/* Back to top button */}
+      {/* Floating Action Elements (Strictly Back to Top + WhatsApp Admissions, zero overlap, mobile safe-area respected) */}
+      <div
+        className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-40 flex flex-col items-end gap-3.5 sm:gap-4 pointer-events-none"
+        style={{
+          paddingBottom: 'env(safe-area-inset-bottom, 0px)',
+          paddingRight: 'env(safe-area-inset-right, 0px)',
+        }}
+      >
+        {/* Back to top button - strictly positioned ABOVE WhatsApp Admissions */}
         {showBackToTop && (
           <button
             type="button"
             onClick={scrollToTop}
             aria-label="Scroll to top"
-            className="w-10 h-10 rounded-full bg-white/95 text-slate-700 hover:text-amber-800 border border-slate-200 shadow-md flex items-center justify-center hover:scale-105 active:scale-95 transition-all cursor-pointer pointer-events-auto"
+            className="w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-white text-slate-700 hover:text-amber-800 border border-slate-200/90 shadow-lg flex items-center justify-center hover:scale-105 active:scale-95 transition-all cursor-pointer pointer-events-auto shrink-0 focus:outline-hidden focus:ring-2 focus:ring-amber-500"
           >
             <ArrowUp className="w-4 h-4 sm:w-5 sm:h-5" />
           </button>
         )}
 
-        {/* Beautiful Floating WhatsApp Button with Pulse & Tooltip Bubble */}
+        {/* WhatsApp Admissions Desk Floating Button - Fixed Bottom-Right */}
         <div className="relative group pointer-events-auto">
           {/* Tooltip bubble on hover for desktop */}
           <div className="absolute right-0 bottom-full mb-2 hidden md:group-hover:flex items-center gap-1.5 px-3 py-1.5 bg-slate-900 text-white text-xs font-bold rounded-xl shadow-xl whitespace-nowrap animate-in fade-in slide-in-from-bottom-1">
@@ -140,7 +146,7 @@ const MainApp: React.FC = () => {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Chat with Little World School Admissions on WhatsApp"
-            className="p-3.5 sm:px-5 sm:py-3.5 bg-emerald-600 hover:bg-emerald-700 active:scale-[0.98] text-white font-black text-xs sm:text-sm rounded-full sm:rounded-2xl shadow-xl shadow-emerald-700/40 hover:shadow-2xl hover:scale-105 transition-all flex items-center gap-2.5 cursor-pointer min-h-[48px] min-w-[48px] justify-center"
+            className="p-3.5 sm:px-5 sm:py-3.5 bg-emerald-600 hover:bg-emerald-700 active:scale-[0.98] text-white font-black text-xs sm:text-sm rounded-full sm:rounded-2xl shadow-xl shadow-emerald-700/40 hover:shadow-2xl hover:scale-105 transition-all flex items-center gap-2.5 cursor-pointer min-h-[48px] min-w-[48px] justify-center focus:outline-hidden focus:ring-2 focus:ring-emerald-400"
           >
             <span className="relative flex h-3 w-3 shrink-0">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-80"></span>

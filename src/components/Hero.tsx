@@ -171,14 +171,14 @@ export const Hero: React.FC<HeroProps> = ({ onOpenInquiry }) => {
                 </div>
               </div>
 
-              {/* Floating Floating Pill: 15:1 Ratio */}
-              <div className="absolute -bottom-4 -left-3 sm:-left-6 bg-white rounded-2xl p-3 shadow-xl border border-amber-200 flex items-center gap-2.5 z-20">
-                <div className="w-9 h-9 rounded-xl bg-amber-100 text-amber-800 flex items-center justify-center font-bold">
-                  <Users className="w-5 h-5 text-amber-700" />
+              {/* Floating Pill: 15:1 Ratio - responsive left positioning */}
+              <div className="absolute -bottom-4 left-2 xs:-left-2 sm:-left-6 bg-white rounded-2xl p-2.5 sm:p-3 shadow-xl border border-amber-200 flex items-center gap-2 sm:gap-2.5 z-20">
+                <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-amber-100 text-amber-800 flex items-center justify-center font-bold shrink-0">
+                  <Users className="w-4 h-4 sm:w-5 sm:h-5 text-amber-700" />
                 </div>
                 <div>
-                  <p className="text-xs font-black text-slate-900">15:1 Student Ratio</p>
-                  <p className="text-[10px] text-slate-500 font-medium">Individual Attention</p>
+                  <p className="text-xs font-black text-slate-900 leading-tight">15:1 Student Ratio</p>
+                  <p className="text-[10px] text-slate-500 font-medium leading-tight">Individual Attention</p>
                 </div>
               </div>
             </div>

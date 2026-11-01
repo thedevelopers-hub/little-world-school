@@ -1,0 +1,17 @@
+{
+  "name": "Little World School - Ambivli",
+  "short_name": "Little World",
+  "description": "Discover Little World School in Ambivli, Kalyan, Thane. Quality English-medium education from Playgroup to Grade 12.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FFFDF9",
+  "theme_color": "#d97706",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

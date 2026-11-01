@@ -1,7 +1,11 @@
+# Robots.txt for Little World School (Ambivli)
+# Production Domain: https://little-world-school.vercel.app/
+
 User-agent: *
 Allow: /
 Allow: /en
 Allow: /mr
 Allow: /hi
 
-Sitemap: https://littleworldschool.edu.in/sitemap.xml
+# Sitemap Location
+Sitemap: https://little-world-school.vercel.app/sitemap.xml

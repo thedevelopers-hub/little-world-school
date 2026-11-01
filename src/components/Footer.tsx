@@ -211,39 +211,55 @@ export const Footer: React.FC<FooterProps> = ({
           </div>
         </div>
 
-        {/* Website Designed & Developed By Footer Credit */}
-        <div className="mt-8 pt-6 border-t border-slate-800/80 flex flex-col md:flex-row items-center justify-between gap-4 text-xs">
-          {/* Developer Branding */}
-          <div className="flex flex-col sm:flex-row items-center text-center sm:text-left gap-1.5 sm:gap-2.5">
-            <span className="text-slate-400 font-medium">
-              Website Designed &amp; Developed By
-            </span>
-            <span className="text-purple-400/40 hidden sm:inline">•</span>
-            <div className="flex flex-wrap items-center justify-center gap-2">
-              <span className="text-white font-bold tracking-wider">
-                VICKY
-              </span>
-              <span className="px-2 py-0.5 rounded-md bg-purple-950/80 border border-purple-500/30 text-purple-200 font-black tracking-widest text-[11px] uppercase">
-                VICTORIX
-              </span>
-              <span className="text-purple-400/40 hidden sm:inline">•</span>
-              <span className="text-slate-400 text-[11px] font-medium">
-                Website Designer &amp; Developer
-              </span>
+        {/* VICTORIX Developer Credit Section - Premium Animated Branding */}
+        <div className="mt-10 pt-7 border-t border-slate-800/80">
+          <div className="rounded-2xl bg-gradient-to-r from-slate-950 via-purple-950/40 to-slate-950 border border-purple-900/40 p-4 sm:p-5 shadow-xl shadow-purple-950/20">
+            <div className="flex flex-col lg:flex-row items-center justify-between gap-4 text-center lg:text-left">
+              {/* Left / Center branding text lockup (Silver & Purple Typography) */}
+              <div className="flex flex-col gap-1.5 max-w-2xl">
+                <div className="flex flex-wrap items-center justify-center lg:justify-start gap-x-2 gap-y-1.5 text-xs text-slate-300">
+                  <span className="text-slate-300 font-medium tracking-wide">
+                    Website Designed &amp; Developed By
+                  </span>
+                  <span className="text-purple-400/50 hidden sm:inline" aria-hidden="true">•</span>
+                  <span className="text-slate-100 font-extrabold tracking-wider text-xs sm:text-sm">
+                    VICKY
+                  </span>
+                  <span className="text-purple-400/50 hidden sm:inline" aria-hidden="true">•</span>
+                  {/* Stylish animated VICTORIX brand text with purple glow & shimmer */}
+                  <span className="relative inline-flex items-center px-2.5 py-0.5 rounded-lg bg-purple-950/90 border border-purple-500/50 animate-victorix-glow shadow-md">
+                    <span className="animate-victorix-shimmer font-black tracking-widest text-xs uppercase select-none">
+                      VICTORIX
+                    </span>
+                  </span>
+                  <span className="text-purple-400/50 hidden sm:inline" aria-hidden="true">•</span>
+                  <span className="text-slate-300 font-medium text-xs">
+                    Website Designer &amp; Developer
+                  </span>
+                </div>
+
+                <div className="flex items-center justify-center lg:justify-start gap-2 pt-0.5">
+                  <span className="text-[11px] font-bold tracking-widest uppercase text-purple-300/80">
+                    A VICTORIX Creation
+                  </span>
+                </div>
+              </div>
+
+              {/* Right: WhatsApp CTA Button with soft pulsing glow */}
+              <div className="shrink-0 w-full sm:w-auto flex justify-center">
+                <a
+                  href={DEVELOPER_CONFIG.whatsappUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Contact Developer on WhatsApp"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-4 sm:px-5 py-2.5 sm:py-3 rounded-xl font-bold text-xs sm:text-sm text-white bg-slate-900 hover:bg-purple-950/90 border border-purple-500/60 hover:border-purple-400 animate-victorix-pulse hover:animate-none hover:shadow-lg hover:shadow-purple-500/30 transition-all duration-300 active:scale-95 cursor-pointer min-h-[44px]"
+                >
+                  <MessageSquare className="w-4 h-4 text-purple-400 shrink-0" />
+                  <span className="tracking-wide">Contact Developer on WhatsApp</span>
+                </a>
+              </div>
             </div>
           </div>
-
-          {/* Premium Black, White & Purple WhatsApp Contact Button */}
-          <a
-            href={DEVELOPER_CONFIG.whatsappUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Contact Developer on WhatsApp"
-            className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl font-bold text-xs text-white bg-slate-900 hover:bg-purple-950 border border-purple-500/40 hover:border-purple-400 shadow-sm shadow-purple-950/50 hover:shadow-md hover:shadow-purple-900/40 transition-all duration-200 group active:scale-95 shrink-0"
-          >
-            <MessageSquare className="w-4 h-4 text-purple-400 group-hover:scale-110 group-hover:text-purple-300 transition-all shrink-0" />
-            <span className="tracking-wide">Contact Developer on WhatsApp</span>
-          </a>
         </div>
       </div>
     </footer>
