@@ -56,15 +56,22 @@ export const I18nProvider: React.FC<{ children: React.ReactNode }> = ({ children
     const twitterDesc = document.querySelector('meta[name="twitter:description"]');
     if (twitterDesc) twitterDesc.setAttribute('content', bundle.meta.ogDescription);
 
-    // 5. Update or inject Canonical
+    // 5. Update or inject Canonical URL (Strictly self-referencing)
     const origin = typeof window !== 'undefined' ? window.location.origin : 'https://little-world-school.vercel.app';
+    const currentPath = typeof window !== 'undefined' ? window.location.pathname.replace(/^\/|\/$/g, '') : '';
     let canonicalTag = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
     if (!canonicalTag) {
       canonicalTag = document.createElement('link');
       canonicalTag.rel = 'canonical';
       document.head.appendChild(canonicalTag);
     }
-    canonicalTag.href = `${origin}/${lang}`;
+    if (!currentPath || currentPath === '') {
+      canonicalTag.href = `${origin}/`;
+    } else if (currentPath === 'en' || currentPath === 'mr' || currentPath === 'hi') {
+      canonicalTag.href = `${origin}/${currentPath}`;
+    } else {
+      canonicalTag.href = `${origin}/`;
+    }
 
     // 6. Update dynamic Schema.org JSON-LD graph
     let scriptTag = document.getElementById('school-dynamic-structured-data') as HTMLScriptElement | null;
@@ -97,7 +104,7 @@ export const I18nProvider: React.FC<{ children: React.ReactNode }> = ({ children
               : lang === 'hi'
               ? ['लिटिल वर्ल्ड स्कूल', 'लिटिल वर्ल्ड स्कूल अंबिवली']
               : ['Little World School', 'Little World School Ambivli'],
-          url: `${origin}/${lang}`,
+          url: !currentPath || currentPath === '' ? `${origin}/` : `${origin}/${currentPath}`,
           logo: `${origin}/favicon.svg`,
           image: SCHOOL_IMAGES.heroMain,
           description: bundle.meta.description,

@@ -39,7 +39,7 @@ export const FacilitiesSection: React.FC = () => {
           <h2 className="fluid-section-title font-extrabold text-slate-900 tracking-tight">
             {t.facilities.title}
           </h2>
-          <p className="fluid-body text-slate-600 font-normal">
+          <p className="fluid-body text-slate-700 font-normal">
             {t.facilities.subtitle}
           </p>
         </div>
@@ -60,9 +60,12 @@ export const FacilitiesSection: React.FC = () => {
                 <div className="relative aspect-[16/10] overflow-hidden bg-amber-100">
                   <img
                     src={photo}
-                    alt={facility.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    alt={`${facility.title} facility at Little World School campus Ambivli`}
+                    width={640}
+                    height={400}
                     loading="lazy"
+                    decoding="async"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent" />
 
@@ -83,12 +86,12 @@ export const FacilitiesSection: React.FC = () => {
                     <h3 className="text-base sm:text-lg font-extrabold text-slate-900 group-hover:text-amber-900 transition-colors">
                       {facility.title}
                     </h3>
-                    <p className="text-xs sm:text-sm text-slate-600 leading-relaxed mt-2">
+                    <p className="text-xs sm:text-sm text-slate-700 leading-relaxed mt-2">
                       {facility.desc}
                     </p>
                   </div>
 
-                  <div className="pt-3 mt-3 border-t border-amber-200/60 flex items-center justify-between text-[11px] font-semibold text-slate-500">
+                  <div className="pt-3 mt-3 border-t border-amber-200/60 flex items-center justify-between text-[11px] font-semibold text-slate-700">
                     <span>Neptune Swarajya Campus</span>
                     <span className="text-emerald-700 font-bold">Verified Child Safe</span>
                   </div>

@@ -138,7 +138,7 @@ export const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({
             aria-label={t.languageSwitcher.ariaLabel}
             className="absolute right-0 mt-1.5 w-36 bg-white rounded-xl shadow-lg border border-amber-200 py-1 z-50 animate-in fade-in slide-in-from-top-1 duration-150"
           >
-            <div className="px-3 py-1 text-[10px] font-bold text-slate-500 uppercase tracking-wider border-b border-slate-100">
+            <div className="px-3 py-1 text-[10px] font-bold text-slate-700 uppercase tracking-wider border-b border-slate-100">
               {t.languageSwitcher.label}
             </div>
             {SUPPORTED_LANGUAGES.map((lang) => {
@@ -151,13 +151,13 @@ export const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({
                   onClick={() => handleSelectLanguage(lang.code)}
                   className={`w-full text-left px-3 py-2 text-xs flex items-center justify-between transition-colors ${
                     isSelected
-                      ? 'bg-amber-50 text-amber-900 font-bold'
-                      : 'text-slate-700 hover:bg-slate-50'
+                      ? 'bg-amber-50 text-amber-950 font-bold'
+                      : 'text-slate-800 hover:bg-slate-50'
                   }`}
                 >
                   <span className="flex items-center gap-2">
-                    <span className="font-medium">{lang.nativeName}</span>
-                    <span className="text-[10px] text-slate-500">({lang.label})</span>
+                    <span className="font-semibold">{lang.nativeName}</span>
+                    <span className="text-[10px] text-slate-600">({lang.label})</span>
                   </span>
                   {isSelected && <Check className="w-3.5 h-3.5 text-amber-600" />}
                 </button>
@@ -173,11 +173,11 @@ export const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({
   return (
     <div className={`w-full ${className}`}>
       <div className="flex items-center justify-between mb-1.5">
-        <label className="text-xs font-semibold text-slate-600 flex items-center gap-1.5">
+        <label className="text-xs font-bold text-slate-800 flex items-center gap-1.5">
           <Globe className="w-3.5 h-3.5 text-amber-600" />
           {t.languageSwitcher.label}
         </label>
-        <span className="text-[11px] text-amber-700 font-medium">
+        <span className="text-[11px] text-amber-900 font-bold">
           {language === 'mr' ? 'मराठी निवडले आहे' : language === 'hi' ? 'हिन्दी चुनी गई है' : 'English selected'}
         </span>
       </div>
@@ -197,16 +197,16 @@ export const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({
               aria-checked={isSelected}
               onClick={() => handleSelectLanguage(lang.code)}
               onKeyDown={(e) => handleKeyNavigation(e, index, SUPPORTED_LANGUAGES.length)}
-              className={`py-2 px-1 text-center text-xs font-semibold rounded-lg transition-all ${
+              className={`py-2 px-1 text-center text-xs font-semibold rounded-lg transition-all focus-visible:ring-2 focus-visible:ring-amber-500 focus-visible:outline-none ${
                 isSelected
                   ? 'bg-amber-600 text-white shadow-xs font-bold'
-                  : 'text-slate-700 hover:bg-amber-100/60'
+                  : 'text-slate-800 hover:bg-amber-100/60'
               }`}
             >
               <div>{lang.nativeName}</div>
               <div
                 className={`text-[10px] ${
-                  isSelected ? 'text-amber-100' : 'text-slate-500'
+                  isSelected ? 'text-amber-100' : 'text-slate-600 font-medium'
                 }`}
               >
                 {lang.label}

@@ -84,7 +84,8 @@ export const Hero: React.FC<HeroProps> = ({ onOpenInquiry }) => {
               {/* Secondary: Explore Classes / Programs */}
               <a
                 href="#classes"
-                className="px-5 py-3.5 sm:py-4 bg-white hover:bg-amber-50 active:scale-[0.98] text-slate-800 border border-amber-200 text-sm sm:text-base font-bold rounded-2xl transition-all flex items-center justify-center gap-2 shadow-xs min-h-[48px]"
+                aria-label="Explore classes and academic programs at Little World School"
+                className="px-5 py-3.5 sm:py-4 bg-white hover:bg-amber-50 active:scale-[0.98] text-slate-800 border border-amber-200 text-sm sm:text-base font-bold rounded-2xl transition-all flex items-center justify-center gap-2 shadow-xs min-h-[48px] focus-visible:ring-2 focus-visible:ring-amber-500 focus-visible:outline-none"
               >
                 <span>{t.hero.ctaExplore}</span>
               </a>
@@ -94,7 +95,8 @@ export const Hero: React.FC<HeroProps> = ({ onOpenInquiry }) => {
                 href={SCHOOL_CONFIG.googleMapsUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-4 py-3 sm:py-4 text-xs sm:text-sm font-semibold text-amber-900 hover:text-amber-700 hover:underline flex items-center justify-center gap-1.5 shrink-0 min-h-[44px]"
+                aria-label="Open directions to Little World School in Google Maps"
+                className="px-4 py-3 sm:py-4 text-xs sm:text-sm font-bold text-amber-950 hover:text-amber-800 hover:underline flex items-center justify-center gap-1.5 shrink-0 min-h-[44px] focus-visible:ring-2 focus-visible:ring-amber-500 focus-visible:outline-none"
               >
                 <Compass className="w-4 h-4 text-amber-600 shrink-0" />
                 <span>{t.contact.getDirections}</span>
@@ -102,7 +104,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenInquiry }) => {
             </div>
 
             {/* Reassurance trust points for parents */}
-            <div className="pt-2 flex flex-wrap items-center gap-3 sm:gap-5 text-[11px] sm:text-xs font-semibold text-slate-600">
+            <div className="pt-2 flex flex-wrap items-center gap-3 sm:gap-5 text-[11px] sm:text-xs font-semibold text-slate-700">
               <div className="flex items-center gap-1.5 bg-emerald-50 text-emerald-900 px-2.5 py-1 rounded-full border border-emerald-200">
                 <ShieldCheck className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
                 <span>CCTV Monitored Safe Campus</span>
@@ -126,13 +128,17 @@ export const Hero: React.FC<HeroProps> = ({ onOpenInquiry }) => {
 
               {/* Main Photo Card */}
               <div className="relative rounded-3xl overflow-hidden bg-white border-4 border-white shadow-2xl">
-                {/* Hero Photo */}
+                {/* Hero Photo with High-Priority LCP Core Web Vitals Optimization */}
                 <div className="relative aspect-[4/3] sm:aspect-[5/4] w-full overflow-hidden bg-amber-100">
                   <img
                     src={SCHOOL_IMAGES.heroMain}
-                    alt="Happy children learning and building together at Little World School"
-                    className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700"
+                    alt="Happy children learning and building together at Little World School Ambivli"
+                    width={800}
+                    height={600}
+                    fetchPriority="high"
                     loading="eager"
+                    decoding="async"
+                    className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent" />
 
@@ -163,7 +169,8 @@ export const Hero: React.FC<HeroProps> = ({ onOpenInquiry }) => {
                   <button
                     type="button"
                     onClick={() => onOpenInquiry('nursery')}
-                    className="w-full py-2.5 px-3 bg-emerald-50 hover:bg-emerald-100 text-emerald-900 border border-emerald-300 rounded-xl text-xs font-bold transition-all flex items-center justify-center gap-2 cursor-pointer"
+                    aria-label="Open quick class inquiry modal via WhatsApp"
+                    className="w-full py-2.5 px-3 bg-emerald-50 hover:bg-emerald-100 text-emerald-900 border border-emerald-300 rounded-xl text-xs font-bold transition-all flex items-center justify-center gap-2 cursor-pointer focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:outline-none"
                   >
                     <MessageSquare className="w-4 h-4 text-emerald-600" />
                     <span>Quick Class Inquiry via WhatsApp</span>
@@ -178,7 +185,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenInquiry }) => {
                 </div>
                 <div>
                   <p className="text-xs font-black text-slate-900 leading-tight">15:1 Student Ratio</p>
-                  <p className="text-[10px] text-slate-500 font-medium leading-tight">Individual Attention</p>
+                  <p className="text-[10px] text-slate-600 font-semibold leading-tight">Individual Attention</p>
                 </div>
               </div>
             </div>
@@ -201,7 +208,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenInquiry }) => {
                   <p className="text-base sm:text-xl font-black text-slate-900 truncate tracking-tight">
                     {stat.value}
                   </p>
-                  <p className="text-[11px] sm:text-xs text-slate-600 font-medium truncate">
+                  <p className="text-[11px] sm:text-xs text-slate-700 font-semibold truncate">
                     {stat.label}
                   </p>
                 </div>

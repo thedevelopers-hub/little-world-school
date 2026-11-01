@@ -43,7 +43,7 @@ export const ContactSection: React.FC = () => {
           <h2 className="fluid-section-title font-extrabold text-slate-900 tracking-tight">
             {t.contact.title}
           </h2>
-          <p className="fluid-body text-slate-600 font-normal">
+          <p className="fluid-body text-slate-700 font-normal">
             {t.contact.subtitle}
           </p>
         </div>
@@ -81,7 +81,7 @@ export const ContactSection: React.FC = () => {
 
                 <div className="pt-3 border-t border-slate-100 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
                   <div className="min-w-0">
-                    <span className="text-xs font-bold text-slate-500 block">
+                    <span className="text-xs font-bold text-slate-600 block">
                       {t.contact.landmarkLabel}:
                     </span>
                     <span className="text-xs sm:text-sm font-extrabold text-amber-900">
@@ -92,7 +92,8 @@ export const ContactSection: React.FC = () => {
                   <button
                     type="button"
                     onClick={copyPostalAddress}
-                    className="inline-flex items-center justify-center gap-1.5 px-3.5 py-2 text-xs font-bold bg-amber-100 hover:bg-amber-200 text-amber-950 rounded-xl transition-colors cursor-pointer shrink-0 min-h-[38px]"
+                    aria-label="Copy official postal address to clipboard"
+                    className="inline-flex items-center justify-center gap-1.5 px-3.5 py-2 text-xs font-bold bg-amber-100 hover:bg-amber-200 text-amber-950 rounded-xl transition-colors cursor-pointer shrink-0 min-h-[38px] focus-visible:ring-2 focus-visible:ring-amber-500 focus-visible:outline-none"
                   >
                     {copied ? <Check className="w-3.5 h-3.5 text-emerald-600" /> : <Copy className="w-3.5 h-3.5" />}
                     <span>{copied ? t.contact.addressCopied : t.contact.copyAddress}</span>
@@ -104,26 +105,26 @@ export const ContactSection: React.FC = () => {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {/* Office Hours */}
                 <div className="p-4 bg-white rounded-2xl border border-amber-200/90 space-y-1">
-                  <span className="text-xs font-bold text-slate-500 flex items-center gap-1.5">
+                  <span className="text-xs font-bold text-slate-700 flex items-center gap-1.5">
                     <Clock className="w-4 h-4 text-amber-600 shrink-0" />
                     {t.contact.officeHoursLabel}
                   </span>
                   <p className="text-xs sm:text-sm font-extrabold text-slate-900">
                     {SCHOOL_CONFIG.officeHours}
                   </p>
-                  <p className="text-[11px] text-slate-500">Admissions & Counseling</p>
+                  <p className="text-[11px] text-slate-600 font-medium">Admissions & Counseling</p>
                 </div>
 
                 {/* School Timings */}
                 <div className="p-4 bg-white rounded-2xl border border-amber-200/90 space-y-1">
-                  <span className="text-xs font-bold text-slate-500 flex items-center gap-1.5">
+                  <span className="text-xs font-bold text-slate-700 flex items-center gap-1.5">
                     <Calendar className="w-4 h-4 text-amber-600 shrink-0" />
                     {t.contact.timingsLabel}
                   </span>
                   <p className="text-xs sm:text-sm font-extrabold text-slate-900">
                     {SCHOOL_CONFIG.prePrimaryTimings} (Pre-Primary)
                   </p>
-                  <p className="text-[11px] text-slate-500">
+                  <p className="text-[11px] text-slate-600 font-medium">
                     {SCHOOL_CONFIG.primaryTimings} (Primary/Sec)
                   </p>
                 </div>
@@ -136,7 +137,8 @@ export const ContactSection: React.FC = () => {
                 href={whatsappVisitUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex-1 py-3.5 px-5 bg-emerald-600 hover:bg-emerald-700 active:scale-[0.98] text-white font-extrabold text-xs sm:text-sm rounded-2xl shadow-md shadow-emerald-600/20 transition-all flex items-center justify-center gap-2 min-h-[46px]"
+                aria-label="Book campus visit on WhatsApp"
+                className="flex-1 py-3.5 px-5 bg-emerald-600 hover:bg-emerald-700 active:scale-[0.98] text-white font-extrabold text-xs sm:text-sm rounded-2xl shadow-md shadow-emerald-600/20 transition-all flex items-center justify-center gap-2 min-h-[46px] focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:outline-none"
               >
                 <MessageSquare className="w-4 h-4 shrink-0" />
                 <span>{t.contact.whatsappVisit || 'Book Campus Visit on WhatsApp'}</span>
@@ -146,7 +148,8 @@ export const ContactSection: React.FC = () => {
                 href={SCHOOL_CONFIG.googleMapsUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="py-3.5 px-5 bg-amber-600 hover:bg-amber-700 active:scale-[0.98] text-white font-extrabold text-xs sm:text-sm rounded-2xl shadow-md shadow-amber-600/20 transition-all flex items-center justify-center gap-2 min-h-[46px]"
+                aria-label="Get directions to Little World School in Google Maps"
+                className="py-3.5 px-5 bg-amber-600 hover:bg-amber-700 active:scale-[0.98] text-white font-extrabold text-xs sm:text-sm rounded-2xl shadow-md shadow-amber-600/20 transition-all flex items-center justify-center gap-2 min-h-[46px] focus-visible:ring-2 focus-visible:ring-amber-500 focus-visible:outline-none"
               >
                 <Navigation className="w-4 h-4 shrink-0" />
                 <span>{t.contact.getDirections}</span>
@@ -167,9 +170,9 @@ export const ContactSection: React.FC = () => {
                 </span>
               </div>
 
-              <h4 className="text-lg sm:text-xl font-extrabold text-slate-900">
+              <h3 className="text-lg sm:text-xl font-extrabold text-slate-900">
                 {SCHOOL_CONFIG.officialName} Campus
-              </h4>
+              </h3>
 
               {/* Map Preview Graphic */}
               <div className="relative rounded-2xl overflow-hidden border border-amber-300 bg-white shadow-inner p-4 text-center space-y-3">
@@ -180,16 +183,16 @@ export const ContactSection: React.FC = () => {
                   <p className="font-black text-slate-900 text-sm mt-3">
                     Neptune Swarajya, Ambivli (W)
                   </p>
-                  <p className="text-xs text-slate-600">
+                  <p className="text-xs text-slate-700">
                     Just 5 min walk / auto from Ambivli Railway Station
                   </p>
                 </div>
 
-                <div className="text-left text-xs text-slate-600 space-y-1">
-                  <p className="font-bold text-slate-800">
+                <div className="text-left text-xs text-slate-700 space-y-1">
+                  <p className="font-bold text-slate-900">
                     🚉 Distance: ~1 km from Ambivli Station
                   </p>
-                  <p className="text-[11px] text-slate-500">
+                  <p className="text-[11px] text-slate-600">
                     Direct access via Swarajya Road. Easy connectivity from Shahad, Titwala, and Kalyan.
                   </p>
                 </div>
@@ -209,7 +212,8 @@ export const ContactSection: React.FC = () => {
               href={SCHOOL_CONFIG.googleMapsUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full py-3.5 bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs sm:text-sm rounded-2xl transition-all flex items-center justify-center gap-2 min-h-[46px]"
+              aria-label="Open Little World School campus location in Google Maps app"
+              className="w-full py-3.5 bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs sm:text-sm rounded-2xl transition-all flex items-center justify-center gap-2 min-h-[46px] focus-visible:ring-2 focus-visible:ring-amber-500 focus-visible:outline-none"
             >
               <Compass className="w-4 h-4 text-amber-400 shrink-0" />
               <span>Open in Google Maps App</span>

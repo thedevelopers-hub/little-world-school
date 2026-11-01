@@ -75,13 +75,13 @@ export const WhatsAppSection: React.FC = () => {
                 {t.whatsapp.title}
               </h2>
 
-              <p className="fluid-body text-slate-600 font-normal leading-relaxed">
+              <p className="fluid-body text-slate-700 font-normal leading-relaxed">
                 {t.whatsapp.subtitle}
               </p>
 
               {/* Topic Selector */}
               <div className="space-y-2.5 pt-1">
-                <label className="block text-xs font-black text-slate-700 uppercase tracking-wider">
+                <label className="block text-xs font-black text-slate-800 uppercase tracking-wider">
                   {t.whatsapp.selectTopicLabel}
                 </label>
                 <div className="flex flex-wrap gap-2">
@@ -90,7 +90,7 @@ export const WhatsAppSection: React.FC = () => {
                       key={item.id}
                       type="button"
                       onClick={() => setTopic(item.id as any)}
-                      className={`px-3.5 py-2 text-xs font-bold rounded-2xl transition-all cursor-pointer min-h-[38px] flex items-center justify-center ${
+                      className={`px-3.5 py-2 text-xs font-bold rounded-2xl transition-all cursor-pointer min-h-[38px] flex items-center justify-center focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:outline-none ${
                         topic === item.id
                           ? 'bg-emerald-600 text-white shadow-xs'
                           : 'bg-emerald-50 text-emerald-950 hover:bg-emerald-100 border border-emerald-200'
@@ -105,7 +105,7 @@ export const WhatsAppSection: React.FC = () => {
               {/* Class Selector when class-related topic is active */}
               {(topic === 'class' || topic === 'fees') && (
                 <div className="space-y-2 pt-1 animate-in fade-in duration-200">
-                  <label className="block text-xs font-bold text-slate-600">
+                  <label className="block text-xs font-bold text-slate-700">
                     Target Class / Program:
                   </label>
                   <div className="flex flex-wrap gap-2">
@@ -116,10 +116,10 @@ export const WhatsAppSection: React.FC = () => {
                           key={cls.id}
                           type="button"
                           onClick={() => setClassId(cls.id)}
-                          className={`px-3 py-1.5 text-xs font-semibold rounded-xl transition-all cursor-pointer ${
+                          className={`px-3 py-1.5 text-xs font-semibold rounded-xl transition-all cursor-pointer focus-visible:ring-2 focus-visible:ring-amber-500 focus-visible:outline-none ${
                             classId === cls.id
                               ? 'bg-amber-600 text-white shadow-xs'
-                              : 'bg-slate-100 text-slate-700 hover:bg-slate-200'
+                              : 'bg-slate-100 text-slate-800 hover:bg-slate-200'
                           }`}
                         >
                           {locName}
@@ -131,7 +131,7 @@ export const WhatsAppSection: React.FC = () => {
               )}
 
               {/* Trust Reassurance Strip */}
-              <div className="pt-2 flex flex-wrap items-center gap-4 text-xs font-semibold text-slate-600">
+              <div className="pt-2 flex flex-wrap items-center gap-4 text-xs font-semibold text-slate-700">
                 <div className="flex items-center gap-1.5 text-emerald-800">
                   <Clock className="w-4 h-4 text-emerald-600 shrink-0" />
                   <span>Responds in &lt; 15 mins (School Hours)</span>
@@ -154,25 +154,25 @@ export const WhatsAppSection: React.FC = () => {
                     <h4 className="text-xs sm:text-sm font-extrabold text-slate-900">
                       {SCHOOL_CONFIG.officialName}
                     </h4>
-                    <p className="text-[10px] text-emerald-700 font-bold">
+                    <p className="text-[10px] text-emerald-800 font-bold">
                       Official WhatsApp Admissions Desk
                     </p>
                   </div>
                 </div>
-                <span className="text-[10px] sm:text-xs font-extrabold bg-emerald-100 text-emerald-800 px-2.5 py-1 rounded-full">
+                <span className="text-[10px] sm:text-xs font-extrabold bg-emerald-100 text-emerald-900 px-2.5 py-1 rounded-full">
                   Online
                 </span>
               </div>
 
               {/* Chat Bubble Preview */}
               <div className="space-y-1.5">
-                <span className="text-xs font-bold text-slate-600 block">
+                <span className="text-xs font-bold text-slate-800 block">
                   {t.whatsapp.previewLabel}
                 </span>
 
                 <div className="p-4 sm:p-5 bg-white rounded-2xl rounded-tl-xs border border-emerald-200 shadow-sm text-slate-800 text-xs sm:text-sm leading-relaxed relative font-sans">
                   <p className="whitespace-pre-line">{messageText}</p>
-                  <span className="text-[10px] text-slate-400 block text-right mt-2 font-mono">
+                  <span className="text-[10px] text-slate-600 block text-right mt-2 font-mono">
                     Direct • Click to Send
                   </span>
                 </div>
@@ -184,7 +184,8 @@ export const WhatsAppSection: React.FC = () => {
                   href={whatsappHref}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex-1 py-3.5 sm:py-4 px-5 bg-emerald-600 hover:bg-emerald-700 active:scale-[0.98] text-white font-extrabold text-sm sm:text-base rounded-2xl shadow-lg shadow-emerald-600/25 hover:shadow-xl transition-all flex items-center justify-center gap-2.5 cursor-pointer min-h-[48px]"
+                  aria-label="Send admissions inquiry on WhatsApp"
+                  className="flex-1 py-3.5 sm:py-4 px-5 bg-emerald-600 hover:bg-emerald-700 active:scale-[0.98] text-white font-extrabold text-sm sm:text-base rounded-2xl shadow-lg shadow-emerald-600/25 hover:shadow-xl transition-all flex items-center justify-center gap-2.5 cursor-pointer min-h-[48px] focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:outline-none"
                 >
                   <MessageSquare className="w-5 h-5 shrink-0" />
                   <span>{t.whatsapp.sendButton}</span>
@@ -194,14 +195,15 @@ export const WhatsAppSection: React.FC = () => {
                 <button
                   type="button"
                   onClick={copyText}
-                  className="py-3 px-4 bg-white hover:bg-emerald-50 text-slate-700 border border-emerald-300 font-bold text-xs sm:text-sm rounded-2xl transition-colors flex items-center justify-center gap-2 cursor-pointer shrink-0 min-h-[44px]"
+                  aria-label="Copy message text to clipboard"
+                  className="py-3 px-4 bg-white hover:bg-emerald-50 text-slate-800 border border-emerald-300 font-bold text-xs sm:text-sm rounded-2xl transition-colors flex items-center justify-center gap-2 cursor-pointer shrink-0 min-h-[44px] focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:outline-none"
                 >
                   {copied ? <Check className="w-4 h-4 text-emerald-600" /> : <Copy className="w-4 h-4" />}
                   <span>{copied ? 'Copied' : 'Copy'}</span>
                 </button>
               </div>
 
-              <p className="text-[11px] text-slate-500 text-center font-medium">
+              <p className="text-[11px] text-slate-700 text-center font-medium">
                 {t.whatsapp.chatHelp}
               </p>
             </div>

@@ -54,14 +54,14 @@ export const SitemapModal: React.FC<SitemapModalProps> = ({ isOpen, onClose }) =
           <button
             type="button"
             onClick={onClose}
-            aria-label="Close dialog"
-            className="p-2 text-slate-400 hover:text-slate-700 hover:bg-slate-100 rounded-lg transition-colors cursor-pointer shrink-0"
+            aria-label="Close sitemap dialog"
+            className="p-2 text-slate-500 hover:text-slate-800 hover:bg-slate-100 rounded-lg transition-colors cursor-pointer shrink-0 focus-visible:ring-2 focus-visible:ring-amber-500 focus-visible:outline-none"
           >
             <X className="w-5 h-5" />
           </button>
         </div>
 
-        <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+        <p className="text-xs sm:text-sm text-slate-700 leading-relaxed">
           {t.sitemapModal.desc}
         </p>
 
@@ -142,11 +142,11 @@ export const SitemapModal: React.FC<SitemapModalProps> = ({ isOpen, onClose }) =
           </div>
           <pre className="text-[11px] overflow-x-auto text-emerald-300 p-1">
 {`<url>
-  <loc>${origin || 'https://littleworldschool.edu.in'}/</loc>
-  <xhtml:link rel="alternate" hreflang="en" href="${origin || 'https://littleworldschool.edu.in'}/en" />
-  <xhtml:link rel="alternate" hreflang="mr" href="${origin || 'https://littleworldschool.edu.in'}/mr" />
-  <xhtml:link rel="alternate" hreflang="hi" href="${origin || 'https://littleworldschool.edu.in'}/hi" />
-  <xhtml:link rel="alternate" hreflang="x-default" href="${origin || 'https://littleworldschool.edu.in'}/en" />
+  <loc>${origin || 'https://little-world-school.vercel.app'}/</loc>
+  <xhtml:link rel="alternate" hreflang="en-IN" href="${origin || 'https://little-world-school.vercel.app'}/en" />
+  <xhtml:link rel="alternate" hreflang="mr-IN" href="${origin || 'https://little-world-school.vercel.app'}/mr" />
+  <xhtml:link rel="alternate" hreflang="hi-IN" href="${origin || 'https://little-world-school.vercel.app'}/hi" />
+  <xhtml:link rel="alternate" hreflang="x-default" href="${origin || 'https://little-world-school.vercel.app'}/" />
 </url>`}
           </pre>
         </div>
@@ -155,7 +155,8 @@ export const SitemapModal: React.FC<SitemapModalProps> = ({ isOpen, onClose }) =
           <button
             type="button"
             onClick={onClose}
-            className="w-full sm:w-auto px-5 py-2.5 bg-amber-600 hover:bg-amber-700 text-white font-bold text-xs sm:text-sm rounded-xl shadow-xs transition-colors cursor-pointer min-h-[44px]"
+            aria-label="Close sitemap dialog"
+            className="w-full sm:w-auto px-5 py-2.5 bg-amber-600 hover:bg-amber-700 text-white font-bold text-xs sm:text-sm rounded-xl shadow-xs transition-colors cursor-pointer min-h-[44px] focus-visible:ring-2 focus-visible:ring-amber-500 focus-visible:outline-none"
           >
             {t.sitemapModal.close}
           </button>

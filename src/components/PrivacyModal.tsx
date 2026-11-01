@@ -33,14 +33,14 @@ export const PrivacyModal: React.FC<PrivacyModalProps> = ({ isOpen, onClose }) =
           <button
             type="button"
             onClick={onClose}
-            aria-label="Close dialog"
-            className="p-2 text-slate-400 hover:text-slate-700 hover:bg-slate-100 rounded-lg transition-colors cursor-pointer shrink-0"
+            aria-label="Close privacy policy dialog"
+            className="p-2 text-slate-500 hover:text-slate-800 hover:bg-slate-100 rounded-lg transition-colors cursor-pointer shrink-0 focus-visible:ring-2 focus-visible:ring-amber-500 focus-visible:outline-none"
           >
             <X className="w-5 h-5" />
           </button>
         </div>
 
-        <div className="space-y-3 text-xs sm:text-sm text-slate-700 leading-relaxed font-sans">
+        <div className="space-y-3 text-xs sm:text-sm text-slate-800 leading-relaxed font-sans">
           <p>{t.privacyModal.p1}</p>
           <p>{t.privacyModal.p2}</p>
           <p>{t.privacyModal.p3}</p>
@@ -48,8 +48,8 @@ export const PrivacyModal: React.FC<PrivacyModalProps> = ({ isOpen, onClose }) =
 
           <div className="p-3 bg-amber-50 rounded-xl border border-amber-200 text-amber-950 font-medium">
             <p className="font-bold">{SCHOOL_CONFIG.officialName}</p>
-            <p className="text-xs text-slate-600 mt-0.5 break-words">{SCHOOL_CONFIG.officialAddress}</p>
-            <p className="text-xs text-slate-600 mt-0.5">Email: {SCHOOL_CONFIG.email}</p>
+            <p className="text-xs text-slate-700 mt-0.5 break-words font-medium">{SCHOOL_CONFIG.officialAddress}</p>
+            <p className="text-xs text-slate-700 mt-0.5 font-medium">Email: {SCHOOL_CONFIG.email}</p>
           </div>
         </div>
 
@@ -57,7 +57,8 @@ export const PrivacyModal: React.FC<PrivacyModalProps> = ({ isOpen, onClose }) =
           <button
             type="button"
             onClick={onClose}
-            className="w-full sm:w-auto px-5 py-2.5 bg-amber-600 hover:bg-amber-700 text-white font-bold text-xs sm:text-sm rounded-xl shadow-xs transition-colors cursor-pointer min-h-[44px]"
+            aria-label="Close privacy dialog"
+            className="w-full sm:w-auto px-5 py-2.5 bg-amber-600 hover:bg-amber-700 text-white font-bold text-xs sm:text-sm rounded-xl shadow-xs transition-colors cursor-pointer min-h-[44px] focus-visible:ring-2 focus-visible:ring-amber-500 focus-visible:outline-none"
           >
             {t.privacyModal.close}
           </button>

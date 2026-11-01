@@ -56,13 +56,13 @@ export const ClassesSection: React.FC<ClassesSectionProps> = ({ onOpenInquiry })
           <h2 className="fluid-section-title font-extrabold text-slate-900 tracking-tight">
             {t.classes.title}
           </h2>
-          <p className="fluid-body text-slate-600 font-normal">
+          <p className="fluid-body text-slate-700 font-normal">
             {t.classes.subtitle}
           </p>
         </div>
 
         {/* Class Selector Tabs */}
-        <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-8 sm:mb-12">
+        <div role="tablist" aria-label="Academic class selection" className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-8 sm:mb-12">
           {SCHOOL_CLASSES.map((cls) => {
             const data = getClassData(cls.id);
             const isSelected = selectedClassId === cls.id;
@@ -71,8 +71,11 @@ export const ClassesSection: React.FC<ClassesSectionProps> = ({ onOpenInquiry })
               <button
                 key={cls.id}
                 type="button"
+                role="tab"
+                aria-selected={isSelected}
+                aria-controls="class-showcase-panel"
                 onClick={() => setSelectedClassId(cls.id)}
-                className={`flex items-center gap-2 px-3.5 py-2.5 sm:px-5 sm:py-3 rounded-2xl text-xs sm:text-sm font-extrabold transition-all cursor-pointer min-h-[44px] ${
+                className={`flex items-center gap-2 px-3.5 py-2.5 sm:px-5 sm:py-3 rounded-2xl text-xs sm:text-sm font-extrabold transition-all cursor-pointer min-h-[44px] focus-visible:ring-2 focus-visible:ring-amber-500 focus-visible:outline-none ${
                   isSelected
                     ? 'bg-amber-600 text-white shadow-md shadow-amber-600/25 scale-[1.02]'
                     : 'bg-white text-slate-700 hover:bg-amber-50 border border-amber-200/90 shadow-xs'
@@ -135,7 +138,8 @@ export const ClassesSection: React.FC<ClassesSectionProps> = ({ onOpenInquiry })
                   href={activeWhatsAppUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full sm:w-auto px-6 py-4 bg-emerald-600 hover:bg-emerald-700 active:scale-[0.98] text-white text-sm sm:text-base font-extrabold rounded-2xl shadow-lg shadow-emerald-600/25 hover:shadow-xl transition-all flex items-center justify-center gap-3 cursor-pointer min-h-[48px] group"
+                  aria-label={`Enquire for ${activeClassData.name} admission on WhatsApp`}
+                  className="w-full sm:w-auto px-6 py-4 bg-emerald-600 hover:bg-emerald-700 active:scale-[0.98] text-white text-sm sm:text-base font-extrabold rounded-2xl shadow-lg shadow-emerald-600/25 hover:shadow-xl transition-all flex items-center justify-center gap-3 cursor-pointer min-h-[48px] group focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:outline-none"
                 >
                   <MessageSquare className="w-5 h-5 shrink-0 transition-transform group-hover:scale-110" />
                   <span>Enquire for {activeClassData.name} on WhatsApp</span>
@@ -149,9 +153,12 @@ export const ClassesSection: React.FC<ClassesSectionProps> = ({ onOpenInquiry })
               <div className="relative rounded-3xl overflow-hidden aspect-[4/3] bg-amber-100 border-4 border-white shadow-xl group">
                 <img
                   src={selectedClassConfig.image}
-                  alt={`${activeClassData.name} learning environment at Little World School`}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  alt={`${activeClassData.name} classroom learning environment at Little World School Ambivli`}
+                  width={600}
+                  height={450}
                   loading="lazy"
+                  decoding="async"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent" />
                 <div className="absolute bottom-3 left-4 right-4 text-white">
@@ -172,9 +179,9 @@ export const ClassesSection: React.FC<ClassesSectionProps> = ({ onOpenInquiry })
                 </div>
                 <div className="flex items-center justify-between font-bold text-slate-900">
                   <span className="text-amber-900">Curriculum:</span>
-                  <span>Play-Based & Integrated State/CBSE</span>
+                  <span>Play-Based &amp; Integrated State/CBSE</span>
                 </div>
-                <p className="text-[11px] text-slate-500 pt-1">
+                <p className="text-[11px] text-slate-600 font-medium pt-1">
                   * Admissions are offered on a rolling first-come basis. Inquire early to secure your child's seat.
                 </p>
               </div>

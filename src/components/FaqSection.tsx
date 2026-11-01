@@ -22,7 +22,7 @@ export const FaqSection: React.FC = () => {
           <h2 className="fluid-section-title font-extrabold text-slate-900 tracking-tight">
             {t.faq.title}
           </h2>
-          <p className="fluid-body text-slate-600 font-normal">
+          <p className="fluid-body text-slate-700 font-normal">
             {t.faq.subtitle}
           </p>
         </div>
@@ -49,7 +49,7 @@ export const FaqSection: React.FC = () => {
                   onClick={() => toggleIndex(index)}
                   aria-expanded={isOpen}
                   aria-controls={contentId}
-                  className="w-full text-left p-3.5 sm:p-5 md:p-6 flex items-start justify-between gap-3 sm:gap-4 cursor-pointer focus:outline-hidden focus:ring-2 focus:ring-amber-500 rounded-2xl min-h-[48px]"
+                  className="w-full text-left p-3.5 sm:p-5 md:p-6 flex items-start justify-between gap-3 sm:gap-4 cursor-pointer focus-visible:ring-2 focus-visible:ring-amber-500 focus-visible:outline-none rounded-2xl min-h-[48px]"
                 >
                   <span className="font-bold text-xs xs:text-sm sm:text-base text-slate-900 leading-snug break-words pr-1">
                     {item.q}

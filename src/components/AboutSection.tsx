@@ -69,7 +69,7 @@ export const AboutSection: React.FC = () => {
           <h2 className="fluid-section-title font-extrabold text-slate-900 tracking-tight">
             {t.about.title}
           </h2>
-          <p className="fluid-body text-slate-600 font-normal">
+          <p className="fluid-body text-slate-700 font-normal">
             {t.about.subtitle}
           </p>
         </div>
@@ -132,9 +132,12 @@ export const AboutSection: React.FC = () => {
             <div className="relative rounded-3xl overflow-hidden shadow-xl border-4 border-white bg-amber-100 aspect-[4/3]">
               <img
                 src={SCHOOL_IMAGES.aboutStory}
-                alt="Teacher interacting warmly with young children at Little World School"
-                className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700"
+                alt="Teacher interacting warmly with young children at Little World School Ambivli"
+                width={600}
+                height={450}
                 loading="lazy"
+                decoding="async"
+                className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent" />
               <div className="absolute bottom-3 left-4 right-4 text-white">
@@ -175,7 +178,7 @@ export const AboutSection: React.FC = () => {
             <h3 className="text-lg sm:text-xl md:text-2xl font-extrabold text-slate-900">
               {t.about.pillarsTitle}
             </h3>
-            <p className="text-xs sm:text-sm text-slate-600 mt-1">
+            <p className="text-xs sm:text-sm text-slate-700 mt-1">
               Our holistic pedagogical approach for every learner's cognitive and emotional well-being.
             </p>
           </div>
@@ -197,12 +200,12 @@ export const AboutSection: React.FC = () => {
                       {pillar.title}
                     </h4>
 
-                    <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                    <p className="text-xs sm:text-sm text-slate-700 leading-relaxed">
                       {pillar.desc}
                     </p>
                   </div>
 
-                  <div className="pt-4 mt-3 border-t border-black/5 flex items-center gap-1.5 text-[11px] font-bold text-slate-500">
+                  <div className="pt-4 mt-3 border-t border-black/5 flex items-center gap-1.5 text-[11px] font-bold text-slate-700">
                     <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" />
                     <span>Holistic Pedagogy</span>
                   </div>

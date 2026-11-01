@@ -126,10 +126,10 @@ const MainApp: React.FC = () => {
           <button
             type="button"
             onClick={scrollToTop}
-            aria-label="Scroll to top"
-            className="w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-white text-slate-700 hover:text-amber-800 border border-slate-200/90 shadow-lg flex items-center justify-center hover:scale-105 active:scale-95 transition-all cursor-pointer pointer-events-auto shrink-0 focus:outline-hidden focus:ring-2 focus:ring-amber-500"
+            aria-label="Scroll back to top of page"
+            className="w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-white text-slate-800 hover:text-amber-800 border border-slate-200 shadow-lg flex items-center justify-center hover:scale-105 active:scale-95 transition-all cursor-pointer pointer-events-auto shrink-0 focus-visible:ring-2 focus-visible:ring-amber-500 focus-visible:outline-none"
           >
-            <ArrowUp className="w-4 h-4 sm:w-5 sm:h-5" />
+            <ArrowUp className="w-5 h-5" />
           </button>
         )}
 

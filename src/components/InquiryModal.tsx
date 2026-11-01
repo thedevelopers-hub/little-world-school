@@ -114,8 +114,8 @@ export const InquiryModal: React.FC<InquiryModalProps> = ({
           <button
             type="button"
             onClick={onClose}
-            aria-label="Close dialog"
-            className="p-2 text-slate-400 hover:text-slate-700 hover:bg-slate-100 rounded-xl cursor-pointer shrink-0 transition-colors"
+            aria-label="Close inquiry dialog"
+            className="p-2 text-slate-500 hover:text-slate-800 hover:bg-slate-100 rounded-xl cursor-pointer shrink-0 transition-colors focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:outline-none"
           >
             <X className="w-5 h-5" />
           </button>
@@ -193,12 +193,13 @@ export const InquiryModal: React.FC<InquiryModalProps> = ({
 
         {/* Live Message Preview */}
         <div className="space-y-1.5 bg-[#FAF7F0] p-3.5 rounded-2xl border border-amber-200">
-          <div className="flex items-center justify-between text-xs font-bold text-slate-600">
+          <div className="flex items-center justify-between text-xs font-bold text-slate-800">
             <span>Pre-filled WhatsApp Message:</span>
             <button
               type="button"
               onClick={copyText}
-              className="text-[11px] font-bold text-amber-900 hover:underline flex items-center gap-1 cursor-pointer"
+              aria-label="Copy message text to clipboard"
+              className="text-[11px] font-bold text-amber-900 hover:underline flex items-center gap-1 cursor-pointer focus-visible:ring-2 focus-visible:ring-amber-500 focus-visible:outline-none rounded"
             >
               {copied ? <Check className="w-3.5 h-3.5 text-emerald-600" /> : <Copy className="w-3.5 h-3.5" />}
               <span>{copied ? 'Copied' : 'Copy'}</span>
@@ -214,19 +215,20 @@ export const InquiryModal: React.FC<InquiryModalProps> = ({
           <button
             type="button"
             onClick={handleOpenWhatsApp}
-            className="w-full py-4 bg-emerald-600 hover:bg-emerald-700 active:scale-[0.98] text-white font-extrabold text-sm sm:text-base rounded-2xl shadow-lg shadow-emerald-600/30 hover:shadow-xl transition-all flex items-center justify-center gap-2.5 cursor-pointer min-h-[48px]"
+            aria-label="Open WhatsApp to send inquiry"
+            className="w-full py-4 bg-emerald-600 hover:bg-emerald-700 active:scale-[0.98] text-white font-extrabold text-sm sm:text-base rounded-2xl shadow-lg shadow-emerald-600/30 hover:shadow-xl transition-all flex items-center justify-center gap-2.5 cursor-pointer min-h-[48px] focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:outline-none"
           >
             <MessageSquare className="w-5 h-5" />
             <span>Open WhatsApp to Inquire</span>
             <ArrowRight className="w-4 h-4" />
           </button>
 
-          <div className="flex items-center justify-between text-[11px] font-semibold text-slate-500 px-1">
-            <span className="flex items-center gap-1 text-emerald-700">
+          <div className="flex items-center justify-between text-[11px] font-semibold text-slate-700 px-1">
+            <span className="flex items-center gap-1 text-emerald-800">
               <Clock className="w-3.5 h-3.5" />
               <span>Responds in &lt; 15 mins</span>
             </span>
-            <span className="flex items-center gap-1 text-slate-500">
+            <span className="flex items-center gap-1 text-slate-700">
               <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" />
               <span>Direct Counselor Connect</span>
             </span>

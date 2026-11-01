@@ -88,7 +88,7 @@ export const AdmissionsSection: React.FC<AdmissionsSectionProps> = ({
           <h2 className="fluid-section-title font-extrabold text-slate-900 tracking-tight">
             {t.admissions.title}
           </h2>
-          <p className="fluid-body text-slate-600 font-normal">
+          <p className="fluid-body text-slate-700 font-normal">
             {t.admissions.subtitle}
           </p>
 
@@ -121,7 +121,7 @@ export const AdmissionsSection: React.FC<AdmissionsSectionProps> = ({
                     {step.title}
                   </h3>
 
-                  <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
+                  <p className="text-xs sm:text-sm text-slate-700 leading-relaxed font-normal">
                     {step.desc}
                   </p>
                 </div>
@@ -188,7 +188,8 @@ export const AdmissionsSection: React.FC<AdmissionsSectionProps> = ({
                 href={activeWhatsAppUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full sm:w-auto px-8 py-4 bg-emerald-500 hover:bg-emerald-600 active:scale-[0.98] text-white text-base sm:text-lg font-black rounded-2xl shadow-xl shadow-black/20 hover:shadow-2xl transition-all flex items-center justify-center gap-3 group cursor-pointer min-h-[52px]"
+                aria-label={`Enquire for ${activeClassName} admission on WhatsApp`}
+                className="w-full sm:w-auto px-8 py-4 bg-emerald-500 hover:bg-emerald-600 active:scale-[0.98] text-white text-base sm:text-lg font-black rounded-2xl shadow-xl shadow-black/20 hover:shadow-2xl transition-all flex items-center justify-center gap-3 group cursor-pointer min-h-[52px] focus-visible:ring-2 focus-visible:ring-white focus-visible:outline-none"
               >
                 <MessageSquare className="w-6 h-6 shrink-0 transition-transform group-hover:scale-110" />
                 <span>Enquire for {activeClassName} on WhatsApp</span>
@@ -215,7 +216,7 @@ export const AdmissionsSection: React.FC<AdmissionsSectionProps> = ({
                 <h4 className="font-extrabold text-base sm:text-lg text-slate-900">
                   {t.admissions.docReqTitle}
                 </h4>
-                <p className="text-xs text-slate-600">
+                <p className="text-xs text-slate-700 font-medium">
                   {t.admissions.docReqSubtitle}
                 </p>
               </div>
@@ -225,7 +226,7 @@ export const AdmissionsSection: React.FC<AdmissionsSectionProps> = ({
               {t.admissions.docs.map((doc, idx) => (
                 <li
                   key={idx}
-                  className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700 bg-white p-3.5 rounded-2xl border border-amber-100"
+                  className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-800 bg-white p-3.5 rounded-2xl border border-amber-100"
                 >
                   <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
                   <span>{doc}</span>
@@ -244,7 +245,7 @@ export const AdmissionsSection: React.FC<AdmissionsSectionProps> = ({
                 <h4 className="font-extrabold text-base sm:text-lg text-slate-900">
                   {t.admissions.criteriaTitle}
                 </h4>
-                <p className="text-xs text-slate-600">
+                <p className="text-xs text-slate-700 font-medium">
                   {t.admissions.criteriaSubtitle}
                 </p>
               </div>
@@ -259,7 +260,7 @@ export const AdmissionsSection: React.FC<AdmissionsSectionProps> = ({
                     className="flex items-center justify-between p-3 bg-[#FAF7F0] rounded-2xl border border-amber-100 text-xs sm:text-sm"
                   >
                     <span className="font-bold text-slate-900">{locName}</span>
-                    <span className="font-extrabold text-amber-800 bg-white px-2.5 py-1 rounded-xl border border-amber-200">
+                    <span className="font-extrabold text-amber-900 bg-white px-2.5 py-1 rounded-xl border border-amber-200">
                       {cls.ageRange}
                     </span>
                   </div>
@@ -273,7 +274,8 @@ export const AdmissionsSection: React.FC<AdmissionsSectionProps> = ({
                 href={createWhatsAppUrl({ topic: 'general' })}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full py-3 bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs sm:text-sm rounded-2xl transition-all flex items-center justify-center gap-2 cursor-pointer"
+                aria-label="Ask an age eligibility question on WhatsApp"
+                className="w-full py-3 bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs sm:text-sm rounded-2xl transition-all flex items-center justify-center gap-2 cursor-pointer focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:outline-none"
               >
                 <MessageSquare className="w-4 h-4" />
                 <span>Have an age eligibility question? Ask on WhatsApp</span>

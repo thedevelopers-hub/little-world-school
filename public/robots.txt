@@ -6,6 +6,7 @@ Allow: /
 Allow: /en
 Allow: /mr
 Allow: /hi
+Allow: /llms.txt
 
 # Sitemap Location
 Sitemap: https://little-world-school.vercel.app/sitemap.xml
