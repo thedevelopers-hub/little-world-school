@@ -5,7 +5,7 @@ import { SCHOOL_CONFIG } from '../config/schoolConfig';
 import { Menu, X, MessageSquare, MapPin, Sparkles, GraduationCap, ArrowRight } from 'lucide-react';
 
 interface NavbarProps {
-  onOpenInquiry: (defaultClass?: string) => void;
+  onOpenInquiry?: (defaultClass?: string) => void;
 }
 
 export const Navbar: React.FC<NavbarProps> = ({ onOpenInquiry }) => {
@@ -162,31 +162,13 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenInquiry }) => {
             ))}
           </nav>
 
-          {/* Right Action Area (Desktop): Segmented Language Switcher + WhatsApp Enquiry Button */}
-          <div className="hidden xl:flex items-center gap-2.5 2xl:gap-3 shrink-0">
+          {/* Right Action Area (Desktop): Segmented Language Switcher */}
+          <div className="hidden xl:flex items-center shrink-0">
             <LanguageSwitcher variant="header" />
-
-            <button
-              type="button"
-              onClick={() => onOpenInquiry()}
-              className="inline-flex items-center gap-2 px-4 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white text-xs xl:text-sm font-extrabold rounded-2xl shadow-md shadow-emerald-600/25 hover:shadow-lg hover:scale-[1.02] active:scale-[0.98] transition-all cursor-pointer whitespace-nowrap"
-            >
-              <MessageSquare className="w-4 h-4 text-white" />
-              <span>{t.nav.enquireNow}</span>
-            </button>
           </div>
 
-          {/* Right Action Area (Tablet / Mobile): Compact Dropdown + Quick Enquire + Hamburger */}
+          {/* Right Action Area (Tablet / Mobile): Compact Dropdown + Hamburger */}
           <div className="flex xl:hidden items-center gap-1.5 sm:gap-2 shrink-0">
-            <button
-              type="button"
-              onClick={() => onOpenInquiry()}
-              className="hidden sm:inline-flex items-center gap-1 px-3 py-1.5 bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold rounded-xl shadow-xs transition-all whitespace-nowrap"
-            >
-              <MessageSquare className="w-3.5 h-3.5 text-white" />
-              <span>{t.nav.enquireNow}</span>
-            </button>
-
             <LanguageSwitcher variant="mobile-dropdown" />
 
             <button
@@ -231,7 +213,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenInquiry }) => {
               type="button"
               onClick={() => {
                 setMobileMenuOpen(false);
-                onOpenInquiry();
+                onOpenInquiry?.();
               }}
               className="w-full py-3.5 bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold text-sm rounded-2xl text-center shadow-md flex items-center justify-center gap-2 cursor-pointer min-h-[44px]"
             >
