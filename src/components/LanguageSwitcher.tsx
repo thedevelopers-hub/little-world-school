@@ -78,15 +78,18 @@ export const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({
           {SUPPORTED_LANGUAGES.map((lang, index) => {
             const isSelected = language === lang.code;
             return (
-              <button
+              <a
                 key={lang.code}
-                type="button"
+                href={`/${lang.code}`}
                 role="radio"
                 aria-checked={isSelected}
                 tabIndex={isSelected ? 0 : -1}
-                onClick={() => handleSelectLanguage(lang.code)}
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleSelectLanguage(lang.code);
+                }}
                 onKeyDown={(e) => handleKeyNavigation(e, index, SUPPORTED_LANGUAGES.length)}
-                className={`relative px-3 py-1 text-xs font-semibold rounded-full transition-all duration-150 cursor-pointer focus:outline-hidden focus:ring-2 focus:ring-amber-500 focus:ring-offset-1 ${
+                className={`relative px-3 py-1 text-xs font-semibold rounded-full transition-all duration-150 cursor-pointer focus:outline-hidden focus:ring-2 focus:ring-amber-500 focus:ring-offset-1 inline-block ${
                   isSelected
                     ? 'bg-amber-600 text-white shadow-xs font-bold scale-[1.02]'
                     : 'text-slate-700 hover:text-amber-900 hover:bg-amber-100/70'
@@ -97,7 +100,7 @@ export const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({
                 {isSelected && (
                   <span className="sr-only"> (Selected language)</span>
                 )}
-              </button>
+              </a>
             );
           })}
         </div>
@@ -121,7 +124,7 @@ export const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({
           aria-haspopup="listbox"
           aria-expanded={dropdownOpen}
           aria-label={t.languageSwitcher.ariaLabel}
-          className="inline-flex items-center gap-1.5 px-2.5 py-1.5 text-xs font-bold text-amber-950 bg-amber-100/80 border border-amber-300 rounded-lg hover:bg-amber-200/70 focus:outline-hidden focus:ring-2 focus:ring-amber-500 transition-colors"
+          className="inline-flex items-center gap-1.5 px-2.5 py-1.5 text-xs font-bold text-amber-950 bg-amber-100/80 border border-amber-300 rounded-lg hover:bg-amber-200/70 focus:outline-hidden focus:ring-2 focus:ring-amber-500 transition-colors cursor-pointer"
         >
           <Globe className="w-3.5 h-3.5 text-amber-700" />
           <span>{currentLangObj.nativeName}</span>
@@ -144,11 +147,15 @@ export const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({
             {SUPPORTED_LANGUAGES.map((lang) => {
               const isSelected = language === lang.code;
               return (
-                <button
+                <a
                   key={lang.code}
+                  href={`/${lang.code}`}
                   role="option"
                   aria-selected={isSelected}
-                  onClick={() => handleSelectLanguage(lang.code)}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleSelectLanguage(lang.code);
+                  }}
                   className={`w-full text-left px-3 py-2 text-xs flex items-center justify-between transition-colors ${
                     isSelected
                       ? 'bg-amber-50 text-amber-950 font-bold'
@@ -160,7 +167,7 @@ export const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({
                     <span className="text-[10px] text-slate-600">({lang.label})</span>
                   </span>
                   {isSelected && <Check className="w-3.5 h-3.5 text-amber-600" />}
-                </button>
+                </a>
               );
             })}
           </div>
@@ -190,12 +197,15 @@ export const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({
         {SUPPORTED_LANGUAGES.map((lang, index) => {
           const isSelected = language === lang.code;
           return (
-            <button
+            <a
               key={lang.code}
-              type="button"
+              href={`/${lang.code}`}
               role="radio"
               aria-checked={isSelected}
-              onClick={() => handleSelectLanguage(lang.code)}
+              onClick={(e) => {
+                e.preventDefault();
+                handleSelectLanguage(lang.code);
+              }}
               onKeyDown={(e) => handleKeyNavigation(e, index, SUPPORTED_LANGUAGES.length)}
               className={`py-2 px-1 text-center text-xs font-semibold rounded-lg transition-all focus-visible:ring-2 focus-visible:ring-amber-500 focus-visible:outline-none ${
                 isSelected
@@ -211,7 +221,7 @@ export const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({
               >
                 {lang.label}
               </div>
-            </button>
+            </a>
           );
         })}
       </div>

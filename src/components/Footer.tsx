@@ -10,6 +10,7 @@ import {
   Sparkles,
   ExternalLink,
   ShieldCheck,
+  Globe,
 } from 'lucide-react';
 
 interface FooterProps {
@@ -23,7 +24,7 @@ export const Footer: React.FC<FooterProps> = ({
   onOpenSitemap,
   onOpenInquiry,
 }) => {
-  const { t, getLocalizedClassName, createWhatsAppUrl } = useI18n();
+  const { t, language, setLanguage, getLocalizedClassName, createWhatsAppUrl } = useI18n();
 
   const whatsappGeneralUrl = createWhatsAppUrl({ topic: 'general' });
 
@@ -177,8 +178,66 @@ export const Footer: React.FC<FooterProps> = ({
           </div>
         </div>
 
+        {/* Crawlable Language Directory Portals */}
+        <div className="pt-6 sm:pt-8 border-b border-slate-800 pb-5 flex flex-wrap items-center justify-between gap-3 text-xs text-slate-300">
+          <div className="flex items-center gap-2">
+            <Globe className="w-3.5 h-3.5 text-amber-500 shrink-0" />
+            <span className="font-bold text-slate-200">Official Language Portals:</span>
+          </div>
+          <div className="flex flex-wrap items-center gap-x-4 gap-y-1.5 text-xs font-medium">
+            <a
+              href="/en"
+              onClick={(e) => {
+                e.preventDefault();
+                setLanguage('en');
+              }}
+              className={`hover:text-amber-400 transition-colors ${language === 'en' ? 'text-amber-400 font-bold underline' : 'text-slate-300'}`}
+              title="Little World School English Portal"
+            >
+              English (/en)
+            </a>
+            <span className="text-slate-600">•</span>
+            <a
+              href="/mr"
+              onClick={(e) => {
+                e.preventDefault();
+                setLanguage('mr');
+              }}
+              className={`hover:text-amber-400 transition-colors ${language === 'mr' ? 'text-amber-400 font-bold underline' : 'text-slate-300'}`}
+              title="लिटल वर्ल्ड स्कूल मराठी पोर्टल"
+            >
+              मराठी (/mr)
+            </a>
+            <span className="text-slate-600">•</span>
+            <a
+              href="/hi"
+              onClick={(e) => {
+                e.preventDefault();
+                setLanguage('hi');
+              }}
+              className={`hover:text-amber-400 transition-colors ${language === 'hi' ? 'text-amber-400 font-bold underline' : 'text-slate-300'}`}
+              title="लिटिल वर्ल्ड स्कूल हिन्दी पोर्टल"
+            >
+              हिन्दी (/hi)
+            </a>
+            <span className="text-slate-600">•</span>
+            <a
+              href="/"
+              onClick={(e) => {
+                e.preventDefault();
+                setLanguage('en');
+                if (typeof window !== 'undefined') window.history.pushState(null, '', '/');
+              }}
+              className="hover:text-amber-400 transition-colors text-slate-300"
+              title="Little World School Main Website"
+            >
+              Main Overview (/)
+            </a>
+          </div>
+        </div>
+
         {/* Bottom Legal & Accessibility Bar */}
-        <div className="pt-6 sm:pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-slate-400">
+        <div className="pt-5 sm:pt-6 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-slate-400">
           <p className="text-center md:text-left">
             {t.footer.copyright} • {t.footer.rightsReserved}
           </p>
