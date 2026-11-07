@@ -209,6 +209,16 @@ export const I18nProvider: React.FC<{ children: React.ReactNode }> = ({ children
     };
 
     scriptTag.textContent = JSON.stringify(localizedSchemaGraph, null, 2);
+
+    // 7. Push virtual page view to Google Tag Manager dataLayer if available
+    if (typeof window !== 'undefined' && Array.isArray((window as unknown as { dataLayer?: unknown[] }).dataLayer)) {
+      (window as unknown as { dataLayer: unknown[] }).dataLayer.push({
+        event: 'virtual_page_view',
+        page_path: canonicalHref.replace(origin, '') || '/',
+        page_title: bundle.meta.title,
+        page_language: langCode,
+      });
+    }
   }, []);
 
   // Language setter with persistence and smooth URL sync
