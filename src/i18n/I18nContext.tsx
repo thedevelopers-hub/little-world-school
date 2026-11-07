@@ -26,10 +26,14 @@ export const I18nProvider: React.FC<{ children: React.ReactNode }> = ({ children
   const t = useMemo(() => getTranslations(language), [language]);
 
   // Synchronize document language, meta tags, schema.org, and hreflang
-  const updateDocumentMetadata = useCallback((lang: SupportedLanguage, bundle: TranslationSchema) => {
+  const updateDocumentMetadata = useCallback((lang: SupportedLanguage, bundle: TranslationSchema, targetPathOverride?: string) => {
     if (typeof document === 'undefined') return;
 
     const langCode = lang === 'mr' ? 'mr-IN' : lang === 'hi' ? 'hi-IN' : 'en-IN';
+    const origin = typeof window !== 'undefined' ? window.location.origin : 'https://little-world-school.vercel.app';
+    const currentPath = targetPathOverride !== undefined 
+      ? targetPathOverride 
+      : (typeof window !== 'undefined' ? window.location.pathname.replace(/^\/|\/$/g, '') : '');
 
     // 1. Update HTML lang attribute
     document.documentElement.lang = langCode;
@@ -37,18 +41,48 @@ export const I18nProvider: React.FC<{ children: React.ReactNode }> = ({ children
     // 2. Update page title
     document.title = bundle.meta.title;
 
-    // 3. Update meta description
+    // 3. Update meta description and keywords
     const metaDesc = document.querySelector('meta[name="description"]');
     if (metaDesc) {
       metaDesc.setAttribute('content', bundle.meta.description);
     }
+    const metaKeywords = document.querySelector('meta[name="keywords"]');
+    if (metaKeywords && bundle.meta.keywords) {
+      metaKeywords.setAttribute('content', bundle.meta.keywords);
+    }
 
-    // 4. Update OpenGraph tags
+    // 4. Update Canonical URL (Strictly self-referencing)
+    let canonicalHref = `${origin}/`;
+    if (currentPath === 'en') {
+      canonicalHref = `${origin}/en`;
+    } else if (currentPath === 'mr') {
+      canonicalHref = `${origin}/mr`;
+    } else if (currentPath === 'hi') {
+      canonicalHref = `${origin}/hi`;
+    } else {
+      canonicalHref = `${origin}/`;
+    }
+
+    let canonicalTag = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
+    if (!canonicalTag) {
+      canonicalTag = document.createElement('link');
+      canonicalTag.rel = 'canonical';
+      document.head.appendChild(canonicalTag);
+    }
+    canonicalTag.href = canonicalHref;
+
+    // 5. Update OpenGraph & Twitter tags
     const ogTitle = document.querySelector('meta[property="og:title"]');
     if (ogTitle) ogTitle.setAttribute('content', bundle.meta.ogTitle);
 
     const ogDesc = document.querySelector('meta[property="og:description"]');
     if (ogDesc) ogDesc.setAttribute('content', bundle.meta.ogDescription);
+
+    const ogUrl = document.querySelector('meta[property="og:url"]');
+    if (ogUrl) ogUrl.setAttribute('content', canonicalHref);
+
+    const ogLocale = document.querySelector('meta[property="og:locale"]');
+    if (ogLocale) ogLocale.setAttribute('content', lang === 'mr' ? 'mr_IN' : lang === 'hi' ? 'hi_IN' : 'en_IN');
 
     const twitterTitle = document.querySelector('meta[name="twitter:title"]');
     if (twitterTitle) twitterTitle.setAttribute('content', bundle.meta.ogTitle);
@@ -56,46 +90,20 @@ export const I18nProvider: React.FC<{ children: React.ReactNode }> = ({ children
     const twitterDesc = document.querySelector('meta[name="twitter:description"]');
     if (twitterDesc) twitterDesc.setAttribute('content', bundle.meta.ogDescription);
 
-    // 5. Update or inject Canonical URL (Strictly self-referencing)
-    const origin = typeof window !== 'undefined' ? window.location.origin : 'https://little-world-school.vercel.app';
-    const currentPath = typeof window !== 'undefined' ? window.location.pathname.replace(/^\/|\/$/g, '') : '';
-    let canonicalTag = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
-    if (!canonicalTag) {
-      canonicalTag = document.createElement('link');
-      canonicalTag.rel = 'canonical';
-      document.head.appendChild(canonicalTag);
-    }
-    if (!currentPath || currentPath === '') {
-      canonicalTag.href = `${origin}/`;
-    } else if (currentPath === 'en' || currentPath === 'mr' || currentPath === 'hi') {
-      canonicalTag.href = `${origin}/${currentPath}`;
-    } else {
-      canonicalTag.href = `${origin}/`;
-    }
-
-    // 6. Update dynamic Schema.org JSON-LD graph
-    let scriptTag = document.getElementById('school-dynamic-structured-data') as HTMLScriptElement | null;
+    // 6. Update Schema.org JSON-LD graph in place (No duplicates)
+    let scriptTag = document.getElementById('school-structured-data') as HTMLScriptElement | null;
     if (!scriptTag) {
       scriptTag = document.createElement('script');
-      scriptTag.id = 'school-dynamic-structured-data';
+      scriptTag.id = 'school-structured-data';
       scriptTag.type = 'application/ld+json';
       document.head.appendChild(scriptTag);
     }
-
-    const faqEntities = (bundle.faq?.items || []).map((item) => ({
-      '@type': 'Question',
-      name: item.q,
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: item.a,
-      },
-    }));
 
     const localizedSchemaGraph = {
       '@context': 'https://schema.org',
       '@graph': [
         {
-          '@type': 'School',
+          '@type': ['School', 'EducationalOrganization', 'Organization'],
           '@id': `${origin}/#school`,
           name: SCHOOL_CONFIG.officialName,
           alternateName:
@@ -104,7 +112,7 @@ export const I18nProvider: React.FC<{ children: React.ReactNode }> = ({ children
               : lang === 'hi'
               ? ['लिटिल वर्ल्ड स्कूल', 'लिटिल वर्ल्ड स्कूल अंबिवली']
               : ['Little World School', 'Little World School Ambivli'],
-          url: !currentPath || currentPath === '' ? `${origin}/` : `${origin}/${currentPath}`,
+          url: canonicalHref,
           logo: `${origin}/favicon.svg`,
           image: SCHOOL_IMAGES.heroMain,
           description: bundle.meta.description,
@@ -125,8 +133,15 @@ export const I18nProvider: React.FC<{ children: React.ReactNode }> = ({ children
           },
           hasMap: SCHOOL_CONFIG.googleMapsUrl,
           priceRange: '₹₹',
-          inLanguage: [langCode, 'en-IN', 'mr-IN', 'hi-IN'],
+          inLanguage: ['en-IN', 'mr-IN', 'hi-IN'],
           sameAs: [`https://wa.me/${SCHOOL_CONFIG.whatsappNumber}`],
+          areaServed: [
+            { '@type': 'AdministrativeArea', name: 'Ambivli' },
+            { '@type': 'AdministrativeArea', name: 'Kalyan' },
+            { '@type': 'AdministrativeArea', name: 'Thane' },
+            { '@type': 'AdministrativeArea', name: 'Titwala' },
+            { '@type': 'AdministrativeArea', name: 'Shahad' },
+          ],
           openingHoursSpecification: [
             {
               '@type': 'OpeningHoursSpecification',
@@ -140,13 +155,55 @@ export const I18nProvider: React.FC<{ children: React.ReactNode }> = ({ children
           '@type': 'WebSite',
           '@id': `${origin}/#website`,
           name: SCHOOL_CONFIG.officialName,
-          url: origin,
+          url: `${origin}/`,
           inLanguage: ['en-IN', 'mr-IN', 'hi-IN'],
+          publisher: {
+            '@id': `${origin}/#school`,
+          },
         },
         {
-          '@type': 'FAQPage',
-          '@id': `${origin}/#faq`,
-          mainEntity: faqEntities,
+          '@type': 'WebPage',
+          '@id': `${origin}/#webpage`,
+          url: canonicalHref,
+          name: bundle.meta.title,
+          description: bundle.meta.description,
+          isPartOf: {
+            '@id': `${origin}/#website`,
+          },
+          about: {
+            '@id': `${origin}/#school`,
+          },
+          inLanguage: langCode,
+        },
+        {
+          '@type': 'BreadcrumbList',
+          '@id': `${origin}/#breadcrumbs`,
+          itemListElement: [
+            {
+              '@type': 'ListItem',
+              position: 1,
+              name: 'Home',
+              item: `${origin}/`,
+            },
+            {
+              '@type': 'ListItem',
+              position: 2,
+              name: 'Classes & Programs',
+              item: `${origin}/#classes`,
+            },
+            {
+              '@type': 'ListItem',
+              position: 3,
+              name: 'Admissions',
+              item: `${origin}/#admissions`,
+            },
+            {
+              '@type': 'ListItem',
+              position: 4,
+              name: 'Contact & Location',
+              item: `${origin}/#contact`,
+            },
+          ],
         },
       ],
     };
@@ -166,7 +223,6 @@ export const I18nProvider: React.FC<{ children: React.ReactNode }> = ({ children
       }
 
       const bundle = getTranslations(newLang);
-      updateDocumentMetadata(newLang, bundle);
 
       if (pushUrl && typeof window !== 'undefined') {
         const hash = window.location.hash || '';
@@ -176,6 +232,8 @@ export const I18nProvider: React.FC<{ children: React.ReactNode }> = ({ children
           window.history.pushState({ lang: newLang }, '', `${targetPath}${hash}`);
         }
       }
+
+      updateDocumentMetadata(newLang, bundle, newLang);
     },
     [updateDocumentMetadata]
   );

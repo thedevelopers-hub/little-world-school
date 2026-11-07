@@ -30,3 +30,4 @@
 - [मराठी पोर्टल (Marathi)](https://little-world-school.vercel.app/mr): मराठी भाषेतील प्रवेश माहिती आणि चौकशी
 - [हिन्दी पोर्टल (Hindi)](https://little-world-school.vercel.app/hi): हिन्दी में प्रवेश विवरण और सहायता
 - [Direct Admissions WhatsApp](https://wa.me/918652681370): Connect directly with the school admissions office
+- [Comprehensive AI Context (llms-full.txt)](https://little-world-school.vercel.app/llms-full.txt): Detailed academic, admission, campus, and geographical specifications for AI search engines

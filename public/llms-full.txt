@@ -1,0 +1,66 @@
+# Little World School — Ambivli, Kalyan, Thane
+# Complete Institutional Context Document for Generative AI Search Engines (Google AI Overviews, Perplexity, ChatGPT Search, Copilot)
+
+## 1. Overview & Institution Identity
+- Institution Name: Little World School (लिटल वर्ल्ड स्कूल / लिटिल वर्ल्ड स्कूल)
+- Official Production Domain: https://little-world-school.vercel.app/
+- Official Admissions WhatsApp: +91 8652681370
+- Direct WhatsApp Link: https://wa.me/918652681370
+- Institution Type: Co-educational Day School & Pre-primary Early Childhood Center
+- Grade Span: Playgroup, Nursery, Junior KG, Senior KG, and Grade 1 through Grade 12
+- Medium of Instruction: English Medium with trilingual faculty guidance (English, Marathi, Hindi)
+- Academic Year: 2026–2027 Admissions Open
+
+## 2. Location & Geographic Landmarks
+- Campus Address: Neptune Swarajya, Swarajya Road, Village Ambivli (West), Taluka Kalyan, District Thane, Maharashtra 421102, India
+- Prominent Landmark: Near Ambivli Railway Station (Central Railway Mumbai Suburban network)
+- Travel Time: 3 to 5 minutes by auto-rickshaw or walking distance from Ambivli Railway Station West exit
+- Surrounding Localities Served: Ambivli, Mohone, Titwala, Kalyan West, Shahad, Ulhasnagar, Murbad Road
+- Geographic Coordinates: Latitude 19.2785° N, Longitude 73.1818° E
+- Google Maps Search Query: "Neptune Swarajya, Ambivli, Thane, Maharashtra 421102"
+
+## 3. Academic Structure & Class Details
+### Playgroup (Ages 1.8 – 2.5 Years)
+- Focus: Sensory development, fine and gross motor coordination, social habit formation, interactive free play, emotional security
+- Environment: Child-proofed activity corners, soft toys, sensory bins, musical circle time
+
+### Nursery (Ages 2.5 – 3.5 Years)
+- Focus: Foundational phonics, basic color and shape recognition, vocabulary building, creative coloring, structured curiosity
+- Learning Methodology: Play-way and Montessori-integrated exploration
+
+### Junior Kindergarten / Jr. KG (Ages 3.5 – 4.5 Years)
+- Focus: Pre-writing readiness, number comprehension (1-50), phonics blends, early environmental studies, public speaking confidence
+- Learning Methodology: Hands-on experiential learning, STEM toy integration
+
+### Senior Kindergarten / Sr. KG (Ages 4.5 – 5.5 Years)
+- Focus: Independent reading, sentence construction, foundational mathematical operations, formal school transition preparation
+- Learning Methodology: Cognitive challenge puzzles, guided library reading, collaborative teamwork
+
+### Primary, Middle & Secondary School (Grade 1 to Grade 10)
+- Focus: Core academics (English, Mathematics, General Science, Social Studies, Hindi, Marathi, Computer Science), continuous assessment, Olympiad preparation, conceptual understanding
+- Co-curricular: Visual arts, performing arts, yoga, physical education, laboratory practicals
+
+### Senior Secondary School (Grade 11 & Grade 12)
+- Focus: Specialized streams (Science, Commerce) with focused competitive exam orientation, career counseling, computer applications
+
+## 4. Campus Infrastructure & Safety Standards
+- Location Safety: Situated inside the gated residential township of Neptune Swarajya, isolated from heavy highway traffic
+- Video Surveillance: Complete CCTV camera coverage of all classrooms, corridors, entrances, and play grounds
+- Child Hygiene: Dedicated female caretakers (didis / maushis), child-height ergonomic washrooms, filtered UV-purified drinking water
+- First Aid & Health: Immediate emergency first-aid kit, on-call medical practitioners, regular health check-up drives
+- Digital Learning: Smart interactive panels, audio-visual educational aids, dedicated computer lab
+
+## 5. Admissions Procedure
+1. Step 1: Online or WhatsApp enquiry via +91 8652681370 (https://wa.me/918652681370)
+2. Step 2: Campus visit and interaction at Neptune Swarajya, Ambivli (West)
+3. Step 3: Submission of registration form, birth certificate, child passport photos, and address proof
+4. Step 4: Admission confirmation and welcome orientation
+
+## 6. Official Digital Links & Portals
+- Homepage: https://little-world-school.vercel.app/
+- English Prospectus: https://little-world-school.vercel.app/en
+- मराठी प्रवेश माहिती (Marathi): https://little-world-school.vercel.app/mr
+- हिन्दी प्रवेश जानकारी (Hindi): https://little-world-school.vercel.app/hi
+- Admissions WhatsApp: https://wa.me/918652681370
+- Sitemap: https://little-world-school.vercel.app/sitemap.xml
+- Robots Policy: https://little-world-school.vercel.app/robots.txt

@@ -32,12 +32,25 @@ const MainApp: React.FC = () => {
   const [showBackToTop, setShowBackToTop] = useState(false);
   const [is404, setIs404] = useState(false);
 
-  // Check path for 404
+  // Check path for 404 and handle noindex meta
   useEffect(() => {
     if (typeof window !== 'undefined') {
       const path = window.location.pathname.replace(/^\/|\/$/g, '');
-      if (path && path !== 'en' && path !== 'mr' && path !== 'hi') {
+      const validStaticPaths = ['google1fcf72b61f7e4b1c.html', 'sitemap.xml', 'robots.txt', 'llms.txt', 'llms-full.txt', 'site.webmanifest', 'favicon.svg'];
+      if (path && path !== 'en' && path !== 'mr' && path !== 'hi' && !validStaticPaths.includes(path)) {
         setIs404(true);
+        let robotsMeta = document.querySelector('meta[name="robots"]');
+        if (!robotsMeta) {
+          robotsMeta = document.createElement('meta');
+          robotsMeta.setAttribute('name', 'robots');
+          document.head.appendChild(robotsMeta);
+        }
+        robotsMeta.setAttribute('content', 'noindex, nofollow');
+      } else {
+        const robotsMeta = document.querySelector('meta[name="robots"]');
+        if (robotsMeta && robotsMeta.getAttribute('content') === 'noindex, nofollow') {
+          robotsMeta.setAttribute('content', 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1');
+        }
       }
     }
   }, []);
